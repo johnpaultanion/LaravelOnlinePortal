@@ -1,6 +1,8 @@
 @extends('../layouts.app')
 
-@section('sub-title','Categories')
+{{-- @section('third_party_stylesheets')
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+@endsection --}}
 
 @section('navbar')
     @include('../components.site.navbar')

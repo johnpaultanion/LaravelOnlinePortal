@@ -2,10 +2,11 @@
 
 namespace App\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Providers\RouteServiceProvider;
 
 class RedirectIfAuthenticated
 {
@@ -20,15 +21,20 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, ...$guards)
     {
         $guards = empty($guards) ? [null] : $guards;
-
+  
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                $redirectTo = '/';
-
                 if(Auth::user()->role == 'student'){
-                    $redirectTo = '/admin/dashboard';
+                    if ($request->is('admin/*') || $request->is('core/*')) {
+                        return redirect('/');
+                    }
                 }
-                return redirect($redirectTo);
+
+                if(Auth::user()->role == 'teacher'){
+                    if ($request->is('core/*')) {
+                        return redirect('/admin/dashboard');
+                    }
+                }
             }
         }
 

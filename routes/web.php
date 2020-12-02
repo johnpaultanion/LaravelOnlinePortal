@@ -22,7 +22,7 @@ Route::get('/', [IndexController::class, 'index'])->name('site.index');
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','guest'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 });
 
