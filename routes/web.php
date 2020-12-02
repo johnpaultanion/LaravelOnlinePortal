@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Site\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [IndexController::class, 'index'])->name('site.index');
+
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('login/facebook', [App\Http\Controllers\auth\LoginController::class, 'redirectToProvider']);
-Route::get('login/facebook/callback', [App\Http\Controllers\auth\LoginController::class, 'handleProviderCallback']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
+Route::get('login/facebook', [LoginController::class, 'redirectToProvider']);
+Route::get('login/facebook/callback', [LoginController::class, 'handleProviderCallback']);

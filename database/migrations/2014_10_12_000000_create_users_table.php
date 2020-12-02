@@ -19,7 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
+            $table->string('role')->default('student');
             $table->string('provider_id')->nullable();
+            $table->string('device_uuid')->nullable();
+            $table->boolean('is_paid')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

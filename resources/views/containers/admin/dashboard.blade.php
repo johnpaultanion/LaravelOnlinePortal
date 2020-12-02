@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card mt-4 px-2">
-                            <h1>Logged In</h1>
+                            <h1>Admin Dashboard</h1>
                         </div>
                     </div>
                 </div>
