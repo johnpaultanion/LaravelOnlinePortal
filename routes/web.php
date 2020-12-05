@@ -23,8 +23,22 @@ Route::get('/', [IndexController::class, 'index'])->name('site.index');
 Auth::routes();
 
 Route::middleware(['auth','guest'])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 });
+
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::resource('/admin/lessons','App\Http\Controllers\Admin\LessonController');
+});
+
+
+
+Route::resource('/site','App\Http\Controllers\Site\IndexController');
+
+
+
+
+
 
 Route::get('login/facebook', [LoginController::class, 'redirectToProvider']);
 Route::get('login/facebook/callback', [LoginController::class, 'handleProviderCallback']);

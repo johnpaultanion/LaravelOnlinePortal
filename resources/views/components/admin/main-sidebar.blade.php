@@ -13,10 +13,18 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/dashboard" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt text-white"></i>
               <p>
                 Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/lessons" class="nav-link">
+              <i class="nav-icon fas fa-book text-white"></i>
+              <p>
+                Lessons
               </p>
             </a>
           </li>

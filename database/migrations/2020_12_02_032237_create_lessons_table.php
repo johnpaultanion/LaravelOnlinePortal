@@ -20,6 +20,7 @@ class CreateLessonsTable extends Migration
             $table->string('thumbnail');
             $table->string('video_name');
             $table->string('user_id');
+            $table->string('category_id');
             $table->timestamps();
         });
     }
