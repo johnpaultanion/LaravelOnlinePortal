@@ -52,7 +52,7 @@
                 
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary text-uppercase dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Acounts
+                        Accounts
                     </button>
                     <div class="dropdown-menu">
                     
