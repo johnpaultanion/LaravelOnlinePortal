@@ -36,6 +36,16 @@ Route::resource('/admin/lessons','App\Http\Controllers\Admin\LessonController');
 Route::resource('/site','App\Http\Controllers\Site\IndexController');
 
 
+//core
+Route::middleware(['auth','guest'])->group(function () {
+    Route::get('/core/dashboard_core', [App\Http\Controllers\Core\DashboardController::class, 'index'])->name('core.dashboard');
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+    Route::resource('/core/lessons','App\Http\Controllers\Core\LessonController');
+    });
+
+
 
 
 

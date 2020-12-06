@@ -148,6 +148,8 @@ class LoginController extends Controller
 
         if(Auth::user()->role == 'teacher'){
             $redirectTo = '/admin/dashboard';
+        }else if(Auth::user()->role == 'core'){
+            $redirectTo = '/core/dashboard_core';
         }
 
         return $request->wantsJson()
