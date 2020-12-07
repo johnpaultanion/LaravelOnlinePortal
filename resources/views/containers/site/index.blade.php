@@ -46,8 +46,8 @@
                     </div>
                 </li> -->
                 <li class="nav-item enroll"><a class="nav-link js-scroll-trigger" href="#">Enroll Now!</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Services</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Teams</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Program</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Lecturers</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                 
                 <div class="btn-group">
@@ -97,8 +97,78 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Ace the Philippine Psychometrician board exam with the help of board topnotchers, industry experts, and lecturers from top universities.</div>
-                <div class="masthead-heading text-uppercase">iMOVE DIGITAL LEARNING</div>
+                <div class="masthead-subheading">Ace the Philippine Psychometrician board exam with the help of board topnotchers, industry experts, and lecturers from top universities. </div>
+                    
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
+                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Marie Therese Ocampo-Rigor, RPsy.png" alt="" />
+                        </span>
+                        <h4 class="my-3 mt-5 text-lecturers">Marie Therese Ocampo-Rigor, RPsy</h4>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 17px;">Top 7 Psychologists' Licensure Exam (2017)</b>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 17px;">Top 10 Psychometricians' Licensure Exam (2015)</b>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 17px;">Lecturer, Ateneo De Manila University</b>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
+                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Maricris Lad-ey Neyney, RGC, RPm.png" alt="" />
+                        </span>
+                        <h4 class="my-3 mt-5  text-lecturers">Maricris Lad-ey Neyney, RGC, RPm</h4>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 15px;">Top 3 Guidance Counselor Licensure Exam</b>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 15px;">Top 8 Pychometricians' Licensure Exam</b>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 15px;">Instructor, Ilocos Sur Polytechnic State College</b>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
+                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Gerald Penaranda, CSIOP, RPsy.png" alt="" />
+                        </span>
+                        <h4 class="my-3 mt-5 text-lecturers">Gerald Penaranda, CSIOP, RPsy</h4>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 15px;">Faculty Member, De La Salle University - Manila</b>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 15px;">HR and OD Trainer-Consultant</b>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <span class="fa-stack fa-4x">
+                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
+                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/pearlviacoballes.jpg" alt="" />
+                        </span>
+                        <h4 class="my-3 mt-5 text-lecturers">Pearl Via Coballes</h4>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 17px;">Top 2, Psychometricians’ Licensure Exam (2014)</b> <br>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 17px;">Top5, Guidance Counselor Licensure Examination (2012) </b> <br>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 17px;">Assistant Professor , St. Mary's University - Bayumbong</b>
+                        
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <span class="fa-stack fa-4x">
+                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
+                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/jimrey.jpg" alt="" />
+                        </span>
+                        <h4 class="my-3 mt-5  text-lecturers">Jim Rey Baloloy, Ph.D., RPsy </h4>
+                        <b class="subtext-lecturers p-0 m-0" style="font-size: 15px;">Assistant Professorial Lecturer, De La Salle University – Manila</b>
+
+                    </div>
+
+                 
+
+                </div>
+                <br>
+
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Enroll Now!</a>
             </div>
         </header>
@@ -107,161 +177,39 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">YOU HAVE A GOOD FUTURE AHEAD OF YOU. WE WILL HELP YOU GET THERE.</h2>
-                    <h3 class="section-subheading text-muted">We are a fully digital review program that is guaranteed comprehensive and top-quality. We created this program with one goal in mind: to lead you towards your dream of becoming a registered psychometrician.</h3>
+                    <h3 class="section-subheading text-muted">We are a fully digital review program that is guaranteed comprehensive and top-quality. We created this program with one goal in mind: to lead you towards your dream of becoming a registered psychometrician.  </h3>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
-                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Marie Therese Ocampo-Rigor, RPsy.png" alt="" />
-                        </span>
-                        <h4 class="my-3 mt-5">Marie Therese Ocampo-Rigor, RPsy</h4>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">Top 7 Psychologists' Licensure Exam (2017)</p>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">Top 10 Psychometricians' Licensure Exam (2015)</p>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">Lecturer, Ateneo De Manila University</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
-                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Gerald Penaranda, CSIOP, RPsy.png" alt="" />
-                        </span>
-                        <h4 class="my-3 mt-5">Gerald Penaranda, CSIOP, RPsy</h4>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">Faculty Member, De La Salle University - Manila</p>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">HR and OD Trainer-Consultant</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
-                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Maricris Lad-ey Neyney, RGC, RPm.png" alt="" />
-                        </span>
-                        <h4 class="my-3 mt-5">Maricris Lad-ey Neyney, RGC, RPm</h4>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">Top 3 Guidance Counselor Licensure Exam</p>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">Top 8 Pychometricians' Licensure Exam</p>
-                        <p class="text-muted p-0 m-0" style="font-size: 15px;">Instructor, Ilocos Sur Polytechnic State College</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Portfolio Grid-->
-        <!-- <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/01-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/03-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/04-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/05-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/06-thumbnail.jpg" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="container">
+                
+         
                     <h2 class="section-heading text-uppercase text-center mb-5">WHEN YOU ENROLL WITH US, WE PROMISE TO HELP YOU SUCCEED.</h2>
-                    <h2 class="section-heading text-uppercase text-center mt-5 text-warning" style="font-size: 25px;">Price: Php 6,750.00</h2>
+                    
                     <p class="text-muted large font-weight-bold" style="font-size: 18px;">Enroll and you’ll instantly receive:</p>
-                    <li class="text-muted large my-2" style="font-size: 18px;">High-quality and comprehensive video lessons on Theories of Personality, Abnormal Psychology, Psychological Assessment, Industrial Psychology, Sikolohiyang Pilipino, Psychological Statistics, and Ethics in Psychology by credible and competent lecturers.</li>
-                    <li class="text-muted large my-2" style="font-size: 18px;">Unlimited access to test drills to develop your test-taking strategies</li>
-                    <li class="text-muted large my-2" style="font-size: 18px;">Quick reference guides for each subject designed to help you gain mastery of the topics</li>
-                    <li class="text-muted large my-2" style="font-size: 18px;">Exclusive pass to live-streamed exam rationalization sessions</li>
-                    <li class="text-muted large my-2" style="font-size: 18px;">Unlimited access to the program until the last day of the board exam</li>
-    
-                </div>
-            </div>
+
+                
+                    <li class="text-muted large my-2" style="font-size: 18px;">High-quality and comprehensive video lessons based on the licensure exam tables of specifications.</li>
+                    <li class="text-muted large my-2" style="font-size: 18px;">Access to hundreds of free practice exam questions to develop your test-taking skills and gain confidence in taking the board exam. </li>
+                    <li class="text-muted large my-2" style="font-size: 18px;">Downloadable handouts and resources designed to help you gain mastery of the topics</li>
+                    <li class="text-muted large my-2" style="font-size: 18px;">Exclusive pass to live-streamed exam rationalization sessions where you’ll get to interact with the lecturer</li>
+                    <li class="text-muted large my-2" style="font-size: 18px;">Lifetime access to the program until you pass the board exam</li>
+                  
+                    <br>
+
+
+                    <h2 class="section-heading text-uppercase text-center "> Review Program Package</h2>
+                    <h1 class="section-heading text-uppercase text-center  text-warning" style="font-size: 35px;">Price: Php 6,750.00</h1>
+
+                    <br>
+                    <div class="text-center">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger " href="#services">Enroll Now!</a>
+                    </div>
+
         </section>
         <!-- About-->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">WE TAKE YOUR DREAM OF BECOMING A REGISTERED PSYCHOMETRICIAN SERIOUSLY. WE GIVE TOTAL SUPPORT BY PROVIDING THESE SERVICES FOR FREE:</h3>
+                    <h2 class="section-heading text-uppercase"><code class="section-heading text-uppercase text-center  text-warning" style="font-size: 50px;"> FREE</code> SERVICES</h2>
+                    <h3 class="section-subheading text-muted">WE TAKE YOUR DREAM SERIOUSLY. WE GIVE TOTAL SUPPORT BY PROVIDING THESE SERVICES FOR FREE:</h3>
                 </div>
                 <ul class="timeline">
                     <li>
@@ -269,9 +217,9 @@
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <!-- <h4>2009-2011</h4> -->
-                                <h4 class="subheading">Mental Wellness Support</h4>
+                                <h4 class="subheading">Psychological Preparation Program</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Preparing for the board exam can cause worry and anxiety. You are not alone in your journey. You can request for a one-on-one session with our mental health professionals when you feel troubled or mentally exhausted.</p></div>
+                            <div class="timeline-body"><p class="text-muted">Get exclusive access to our webinars that will keep you disciplined, inspired, and excited to keep moving forward. Reviewing for the board exam is a tough battle. We will equip you with every success strategy available. Know the skills of mastering your emotions, improving your focus, and sharpening your learning skills.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -279,9 +227,9 @@
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <!-- <h4>March 2011</h4> -->
-                                <h4 class="subheading">Success Coaching</h4>
+                                <h4 class="subheading">CAREER PREPARATION PROGRAM</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Get exclusive access to our webinars that will keep you disciplined, inspired, and excited to keep moving forward. Reviewing for the board exam is a tough battle. We will equip you with every success strategy available. Know the skills of mastering your emotions, improving your focus, and sharpening your learning skills.</p></div>
+                            <div class="timeline-body"><p class="text-muted">We help prepare you for life after the board exam. Through our online training program, we’ll help you set career goals. You will also learn effective communication skills, how to make a good impression at job interviews, and how to dress successfully. We’ll teach you all that you need to know in order to gain the confidence you need to go after your dream job.</p></div>
                         </div>
                     </li>
                     <li>
@@ -289,9 +237,9 @@
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <!-- <h4>December 2012</h4> -->
-                                <h4 class="subheading">Career Preparation Program</h4>
+                                <h4 class="subheading">One-on-One Mental Wellness Support </h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">We help prepare you for life after the board exam as a registered psychometrician. Through our online training program, we’ll help you set career goals. You will also learn effective communication skills, how to make a good impression at job interviews, and how to dress successfully. We’ll teach you all that you need to know in order to gain the confidence you need to go after your dream job.</p></div>
+                            <div class="timeline-body"><p class="text-muted">Preparing for the board exam can cause worry and anxiety. You are not alone in your journey. You can request for a one-on-one session with our mental health professionals when you feel troubled or mentally exhausted. </p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -312,46 +260,81 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Our team of mental health professionals dedicated to the purpose of helping you achieve your dream of becoming a registered psychometrician</h3>
+                    <!-- <h2 class="section-heading text-uppercase">Our Amazing Team</h2> -->
+                    <h2 class="section-subheading text-muted">Our team of mental health professionals dedicated to the purpose of helping you achieve your dream of becoming a registered psychometrician</h2>
+                   
                 </div>
+
+                <br> <h3 class="section-subheading text-muted">Photos of mental health professionals: </h3>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="img/Icel Monsale, RGC.png" alt="" />
-                            <h4>Icel Monsale</h4>
-                            <p class="text-muted">RGC</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            <img class="mx-auto rounded-circle" src="img/icelmonsale.jpg" alt="" />
+                            <h4>Dr. Icel Monsale ,<code class="text-muted"> RGC</code></h4>
+                             
+                           
+                    
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="img/Irish Movido, RPsy.png" alt="" />
-                            <h4>Irish Movido</h4>
-                            <p class="text-muted">RPsy </p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                            <h4>Irish Movido ,<code class="text-muted"> RPsy</code></h4>
+                            
+                            </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="img/Ileen Mendoza, RGC.png" alt="" />
-                            <h4>Ileen Mendoza</h4>
-                            <p class="text-muted">RGC</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <img class="mx-auto rounded-circle" src="img/ileenmendoza.jpg" alt="" />
+                            <h4>Ileen Mendoza ,<code class="text-muted"> RPsy</code></h4>
+                           
+                            <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Final Bonus: Referral Program As our way of thanking our reviewees for encouraging others to enroll with us, we give a cash incentive of Php1,000.00 for every successful referral.</p></div>
+                
+                <br><br>
+                <h2 class="section-heading text-uppercase">Final Bonus: </h2>
+                
+
+                <div class="text-center">
+                <h3 class="section-heading text-uppercase text-warning">Referral Program:</h3>
+                    <h3 class="col-lg-12 mx-auto text-center">As our way of thanking our reviewees for encouraging others to enroll with us, we give a cash incentive of Php1,000.00 for every successful referral. </h3>
+                
                 </div>
-            </div>
+
         </section>
+
+
+        <section class="page-section" id="/">
+
+
+        <h2 class="section-heading text-uppercase text-center ">UNLIMITED ACCESS SO YOU CAN GAIN MASTERY OF THE COURSES</h2>
+        <h3 class="col-lg-10 mx-auto text-muted">Our learning platform is accessible 24 hours a day, seven days a week. Study at your own pace; you can watch part of a lecture, pause it, and take some time to digest the lessons to ensure that you are mastering the topic before moving on to the next section. Review at your own speed and get the most out of the review program.  </h3>
+
+            <div class="row">
+                <img class="col-lg-10 mx-auto" src="img/portal.png" style="height: 30em;" alt="">
+            </div>
+            
+        </section>
+
+        <section class="page-section" id="/">
+
+
+        <h2 class="section-heading text-uppercase text-center ">EASILY NAVIGATE OUR INTERACTIVE PLATFORM</h2>
+        <h3 class="col-lg-10 mx-auto text-muted">Our user-friendly virtual space will enable you to access all the resources you need. It will also allow you to have an online discussion with your fellow reviewees about the course videos. You don’t need to learn in isolation, you can interact and share ideas with your fellow reviewees. </h3>
+        <br>
+        <h6 class="col-lg-10 mx-auto text-muted">Here’s a sneak peak inside iMove Digital Learning:</h6>
+        
+            <div class="row">
+            <iframe class="col-lg-10 mx-auto text-muted" src="img/vid.mp4" width="500" height="400" frameborder="0" allow="autoplay"></iframe>
+            </div>
+            
+        </section>
+
+
         <!-- Clients-->
         <!-- <div class="py-5">
             <div class="container">

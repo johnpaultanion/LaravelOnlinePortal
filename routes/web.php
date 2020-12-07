@@ -43,7 +43,11 @@ Route::middleware(['auth','guest'])->group(function () {
 
 Route::middleware(['auth','guest'])->group(function () {
     Route::resource('/core/lessons','App\Http\Controllers\Core\LessonController');
-    });
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+    Route::resource('/core/categories','App\Http\Controllers\Core\CategoryController');
+});
 
 
 

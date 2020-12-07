@@ -26,7 +26,7 @@
 
             <div class="input-group mt-0 input-group-sm" style="width: 550px; ">
             
-            <a class="btn btn-primary "href="/admin/lessons/create" >
+            <a class="btn btn-primary "href="/core/lessons/create" >
             <i class="fas fa-plus-circle"></i> Create new Lesson
             </a>
    
@@ -76,9 +76,9 @@
 
                        
 
-                            <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-pen-alt"> Edit</i></a> 
+                            <a href="/core/lessons/{{$lesson->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-pen-alt"> Edit</i></a> 
                            
-                            {!!Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@destroy', $lesson->id], 'method' => 'POST'])!!}
+                            {!!Form::open(['action' => ['App\Http\Controllers\Core\LessonController@destroy', $lesson->id], 'method' => 'POST'])!!}
                                 {{Form::hidden('_method', 'DELETE')}}
                                
                                 {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}
@@ -87,7 +87,7 @@
                             {!!Form::close()!!}
 
                        
-                         <a href="/admin/lessons/{{$lesson->id}}" class="btn btn-sm btn-primary"><i class="fas fa-eye"> View</i></a>
+                         <a href="/core/lessons/{{$lesson->id}}" class="btn btn-sm btn-primary"><i class="fas fa-eye"> View</i></a>
                         
                         </td>
        

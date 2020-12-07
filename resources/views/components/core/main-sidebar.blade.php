@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
       {{-- <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
-      <span class="brand-text font-weight-bold ml-4">E-LEARNING</span>
+      <span class="brand-text font-weight-bold ml-4">I</span>
     </a>
 
     <!-- Sidebar -->
@@ -28,6 +28,31 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/core/categories" class="nav-link">
+              <i class="nav-icon fas fa-book text-white"></i>
+              <p>
+                Categories
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/core/lessons" class="nav-link">
+              <i class="nav-icon fas fa-book text-white"></i>
+              <p>
+                User Management
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/core/lessons" class="nav-link">
+              <i class="nav-icon fas fa-book text-white"></i>
+              <p>
+                Add a new Teacher
+              </p>
+            </a>
+          </li>
+
 
         </ul>
       </nav>

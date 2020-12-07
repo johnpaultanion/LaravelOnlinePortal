@@ -119,7 +119,7 @@ class LessonController extends Controller
         
         //Check if post exists before deleting
         if (!isset($lesson)){
-            return redirect('admin/lessons')->with('error', 'No Post Found');
+            return redirect('admin/lessons')->with('error', 'No Lesson Found');
         }
 
         // Check for correct user
