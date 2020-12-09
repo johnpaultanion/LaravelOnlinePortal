@@ -52,7 +52,6 @@
                     <th>TITLE</th>
                     <th>DESCRIPTION</th>
                     <th>THUMBNAIL</th>
-                    <th>VIDEO NAME</th>
                     <th>USER NAME</th>
                     <th>CREATED AT</th>
                     <th>ACTION</th>
@@ -68,7 +67,6 @@
                         <td>{{ $lesson->title }}</td>
                         <td>{{ $lesson->description }}</td>
                         <td>{{ $lesson->thumbnail }}</td>
-                        <td>{{ $lesson->video_name }}</td>
                         <td>{{ $lesson->user->name }}</td>
                         <td>{{ $lesson->created_at }}</td>
 
@@ -76,14 +74,13 @@
 
                         @if(Auth::user()->id == $lesson->user_id)
 
-                            <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-pen-alt"> Edit</i></a> 
+                        <a href="/admin/sectionvideo/create" class="btn btn-sm btn-warning"><i class="fas fa-plus-circle"> Add a Videos</i></a> 
+                        <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-pen-alt"> Edit</i></a> 
                            
                             {!!Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@destroy', $lesson->id], 'method' => 'POST'])!!}
                                 {{Form::hidden('_method', 'DELETE')}}
                                
-                                {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}
-
-                                
+                                {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}                               
                             {!!Form::close()!!}
 
                          @endif

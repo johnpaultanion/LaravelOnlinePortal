@@ -30,8 +30,8 @@ class LessonController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'thumbnail' => 'required|max:1999',
-            'video_name' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|required'
+            'thumbnail' => 'required|max:1999'
+            // 'video_name' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|required'
             
 
             
@@ -69,29 +69,30 @@ class LessonController extends Controller
 
 
 
-         if($request->hasFile('video_name')){
+        //  if($request->hasFile('video_name')){
         
-            $filenameWithExt = $request->file('video_name')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('video_name')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStoreV= $filename.'_'.time().'_'.$userid.'.'.$extension;
-            // Upload Image
-            $path = $request->file('video_name')->storeAs('public/video_file', $fileNameToStoreV);
+        //     $filenameWithExt = $request->file('video_name')->getClientOriginalName();
+        //     // Get just filename
+        //     $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        //     // Get just ext
+        //     $extension = $request->file('video_name')->getClientOriginalExtension();
+        //     // Filename to store
+        //     $fileNameToStoreV= $filename.'_'.time().'_'.$userid.'.'.$extension;
+        //     // Upload Image
+        //     $path = $request->file('video_name')->storeAs('public/video_file', $fileNameToStoreV);
 		
 		
-        } else {
-            $fileNameToStoreV = 'novideo.mp4';
-        }
+        // } else {
+        //     $fileNameToStoreV = 'novideo.mp4';
+        // }
 
 
 
 
-         $lesson->video_name = $fileNameToStoreV;
          $lesson->user_id = auth()->user()->id;
-       
+         $lesson->category_id = "1";
+         
+        
          $lesson->save();
  
          return redirect('admin/lessons')->with('success', 'Lesson Created');

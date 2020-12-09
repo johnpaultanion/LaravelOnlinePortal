@@ -17,25 +17,31 @@
         @include('inc.messages')
 
         <div class="card-header">
-        <h3 class="card-title">Create A new lesson</h3>
+        <h3 class="card-title">Add a videos</h3>
         </div>
 
         <div class="card">
          <div class="card-body ">
-            {!! Form::open(['action' => 'App\Http\Controllers\Admin\LessonController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+            {!! Form::open(['action' => 'App\Http\Controllers\Admin\SectionVideoController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                
+                
                 <div class="form-group">
-                    {{Form::label('title', 'Title')}}
-                    {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
+
+                    <label for="section-content">Select Section</label>
+
+                    <select name="section_id" class="form-control">
+                    
+                        <option value="">test1</option>
+                        <option value="">test2</option>
+
+                    </select>
+
                 </div>
-                <div class="form-group">
-                    {{Form::label('description', 'Description')}}
-                    {{Form::textarea('description', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
+
+
+                    {{Form::label('video_name', 'Video File')}}<br>
+                    {{Form::file('video_name')}}
                 </div>
-                <div class="form-group">
-                    {{Form::label('thumbnail', 'Thumbnail')}}<br>
-                    {{Form::file('thumbnail')}}
-                </div>
-             
                 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
             {!! Form::close() !!}
             </div>

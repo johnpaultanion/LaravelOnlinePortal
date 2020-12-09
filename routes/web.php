@@ -22,18 +22,35 @@ Route::get('/', [IndexController::class, 'index'])->name('site.index');
 
 Auth::routes();
 
+//admin lecturers
 Route::middleware(['auth','guest'])->group(function () {
     Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 });
-
 
 Route::middleware(['auth','guest'])->group(function () {
 Route::resource('/admin/lessons','App\Http\Controllers\Admin\LessonController');
 });
 
-
-
 Route::resource('/site','App\Http\Controllers\Site\IndexController');
+
+//admin section vids
+Route::middleware(['auth','guest'])->group(function () {
+    Route::resource('/admin/sectionvideo','App\Http\Controllers\Admin\SectionVideoController');
+    });
+
+Route::middleware(['auth','guest'])->group(function () {
+    Route::get('/admin/sectionvideo/create{section_id?}','App\Http\Controllers\Admin\SectionVideoController@create');
+    });
+
+//admin sections
+Route::middleware(['auth','guest'])->group(function () {
+Route::resource('/admin/sections','App\Http\Controllers\Admin\SectionController');
+    });
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/sections/create{lesson_id?}','App\Http\Controllers\Admin\SectionController@create');
+        });
+
+
 
 
 //core

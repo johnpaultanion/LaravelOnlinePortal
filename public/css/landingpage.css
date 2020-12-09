@@ -558,6 +558,13 @@ pre code {
   .container-sm, .container {
     max-width: 540px;
   }
+  header.masthead {
+    
+    background-color: #113859;
+  }
+
+
+
 }
 @media (min-width: 768px) {
   .container-md, .container-sm, .container {
@@ -1920,6 +1927,7 @@ pre code {
   .table-responsive-sm > .table-bordered {
     border: 0;
   }
+
 }
 @media (max-width: 767.98px) {
   .table-responsive-md {
@@ -4809,7 +4817,13 @@ a.badge-dark:focus, a.badge-dark.focus {
   .jumbotron {
     padding: 4rem 2rem;
   }
+ 
+  
 }
+
+
+
+
 
 .jumbotron-fluid {
   padding-right: 0;
@@ -7273,6 +7287,9 @@ button.bg-dark:focus {
   .float-sm-none {
     float: none !important;
   }
+
+  
+ 
 }
 @media (min-width: 768px) {
   .float-md-left {
@@ -9701,17 +9718,27 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 576px) {
-  .text-sm-left {
-    text-align: left !important;
+  
+  .text-center .text-lecturers{
+    font-size: 1rem;
+  }
+  .text-center .subtext-lecturers{
+    font-size: 1rem;
+    
+  }
+  .section-subheading{
+    font-size: 1.5rem;
   }
 
-  .text-sm-right {
-    text-align: right !important;
+  .referal{
+    padding: 10px;
   }
 
-  .text-sm-center {
-    text-align: center !important;
-  }
+
+  
+
+
+
 }
 @media (min-width: 768px) {
   .text-md-left {
@@ -10066,7 +10093,7 @@ img::-moz-selection {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: #16518b;
 }
 
 
@@ -10145,6 +10172,8 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  background-color: #113859;
+  width: 100%;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -10178,6 +10207,17 @@ header.masthead .masthead-heading {
     line-height: 4.5rem;
     margin-bottom: 4rem;
   }
+  .text-center .text-lecturers{
+    font-size: 1rem;
+  }
+  .text-center .subtext-lecturers{
+    font-size: 1rem;
+    
+  }
+  .section-subheading{
+    font-size: 1.5rem;
+  }
+  
 }
 #portfolio .portfolio-item {
   max-width: 25rem;
@@ -10276,7 +10316,7 @@ header.masthead .masthead-heading {
   left: 40px;
   width: 1px;
   margin-left: -1.5px;
-  content: "";
+
   background-color: #113859;
 }
 .timeline > li {
@@ -10433,6 +10473,11 @@ header.masthead .masthead-heading {
   .timeline > li.timeline-inverted > .timeline-panel {
     padding: 0 100px 20px 20px;
   }
+
+  
+
+
+
 }
 .team-member {
   margin-bottom: 3rem;
@@ -10518,3 +10563,17 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: #fff;
 
 }
+
+.cover{
+  background-color: #0b3557;
+}
+.cover .cover-body{
+  border-bottom: solid 2px #f7941d;
+
+}
+
+
+
+
+
+
