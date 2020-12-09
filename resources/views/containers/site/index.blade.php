@@ -268,7 +268,7 @@
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <!-- <h4>March 2011</h4> -->
-                                <h4 class="subheading">CAREER PREPARATION PROGRAM</h4>
+                                <h4 class="subheading">Career Preparation Program</h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">We help prepare you for life after the board exam. Through our online training program, we’ll help you set career goals. You will also learn effective communication skills, how to make a good impression at job interviews, and how to dress successfully. We’ll teach you all that you need to know in order to gain the confidence you need to go after your dream job.</p></div>
                         </div>
