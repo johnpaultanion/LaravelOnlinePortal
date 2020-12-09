@@ -208,7 +208,7 @@
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h3 class="section-heading text-uppercase">YOU HAVE A GOOD FUTURE AHEAD OF YOU. WE WILL HELP YOU GET THERE.</h3>
+                    <h3 class="section-heading text-uppercase text-sm-left">YOU HAVE A GOOD FUTURE AHEAD OF YOU. WE WILL HELP YOU GET THERE.</h3>
                     <h3 class="section-subheading text-muted">We are a fully digital review program that is guaranteed comprehensive and top-quality. We created this program with one goal in mind: to lead you towards your dream of becoming a registered psychometrician.  </h3>
                 </div>
                 
@@ -229,7 +229,7 @@
                   
                     <br>
 
-                     <div class="cover m-1 p-1">     
+                     <div class="cover1 m-1 p-1">     
                     
                         <h2 class="section-heading text-uppercase text-center text-white"> Review Program Package</h2>
                         <h1 class="section-heading text-uppercase text-center  text-warning" style="font-size: 35px;">Price: Php 6,750.00</h1>
@@ -246,6 +246,16 @@
             </div>
         </section>
         <!-- About-->
+
+        <section class="title" id="about">
+            <div class="container">
+                <div class="text-center">
+                 <h2 class=" text-uppercase text-white">Program</h2>
+                 </div>
+                
+            </div>
+        </section>
+
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
@@ -298,10 +308,20 @@
             </div>
         </section>
         <!-- Team-->
+        <section class="title" id="team">
+            <div class="container">
+                <div class="text-center">
+                 <h2 class=" text-uppercase text-white">Lecturers</h2>
+                 </div>
+                
+            </div>
+        </section>
+
+
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <!-- <h2 class="section-heading text-uppercase">Our Amazing Team</h2> -->
+                    
                     <h5 class="section-heading text-uppercase ">Our team of mental health professionals dedicated to the purpose of helping you achieve your dream of becoming a registered psychometrician</h5>
                    
                 </div>
@@ -344,12 +364,12 @@
                 <div class="container referal">
                   
                    
-                    <h2 class="section-heading text-uppercase text-warning">Final Bonus : </h2>
+                    <h2 class="section-heading text-uppercase ">Final Bonus : </h2>
                     
                     <div class="cover-body p-2">
                         <div class="text-center">
-                        <h3 class="section-heading text-uppercase text-white">Referral Program</h3><br>
-                            <h4 class="col-lg-12 mx-auto text-center text-white">As our way of thanking our reviewees for encouraging others to enroll with us, we give a cash incentive of Php1,000.00 for every successful referral. </h4>
+                        <h3 class="section-heading text-uppercase ">Referral Program</h3><br>
+                            <h4 class="col-lg-12 mx-auto text-center ">As our way of thanking our reviewees for encouraging others to enroll with us, we give a cash incentive of Php1,000.00 for every successful referral. </h4>
                         
                         </div>
                     </div>     
@@ -378,7 +398,7 @@
             </div>
         </section>
 
-        <section class="page-section cover" id="/">
+        <section class="page-section cover1" id="/">
 
             <div class="container">
                 <div class="row">
