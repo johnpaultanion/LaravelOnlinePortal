@@ -228,7 +228,7 @@
                         <span class="fa-stack fa-4x">
                             <!-- <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
-                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/peruelo.png" alt="" />
+                            <img class="mx-auto rounded-circle" style="width: 150px;" src="img/imgperuelo.png" alt="" />
                         </span>
                         <h5 class="my-3 mt-5  text-warning">Carla Marez Peruelo, RN, RPsy</h5>
                         
@@ -442,7 +442,7 @@
                             </div>
 
                             <div class="col-md-12 cover-body">
-                                <iframe class=" col-md-12 text-muted" src="img/vid.mp4" width="500" height="400" frameborder="0"></iframe>
+                                <iframe class=" col-md-12" src="img/vid.mp4" width="500" height="400" frameborder="0"></iframe>
                             </div>
                            
                         </div>
