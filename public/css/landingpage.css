@@ -3994,12 +3994,10 @@ input[type=button].btn-block {
   line-height: inherit;
   white-space: nowrap;
 }
-.navbar-brand .logo{
-  width: 130px;
- 
-}
+
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
+  
 }
 
 .navbar-nav {
@@ -10030,6 +10028,10 @@ p {
   line-height: 1.75;
 }
 
+.page-referal{
+  padding: 1rem 0;
+}
+
 .page-section {
   padding: 6rem 0;
 }
@@ -10153,7 +10155,7 @@ img::-moz-selection {
   }
   #mainNav.navbar-shrink .navbar-brand .logo,
 #mainNav.navbar-shrink .navbar-brand img {
-    height: 1.5rem;
+    height: 2.3rem;
   }
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
@@ -10169,12 +10171,17 @@ header.masthead {
   color: #fff;
   background-image: url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  background-color: #113859;
+  background-color: #000508;
   width: 100%;
+
+  transition: all 1s;
+  -webkit-transition: all 1s;
 }
+
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: italic;
@@ -10322,7 +10329,7 @@ header.masthead .masthead-heading {
 .timeline > li {
   position: relative;
   min-height: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .timeline > li:after, .timeline > li:before {
   display: table;
@@ -10407,7 +10414,7 @@ header.masthead .masthead-heading {
   }
   .timeline > li {
     min-height: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
   .timeline > li .timeline-panel {
     float: left;
@@ -10613,6 +10620,15 @@ section#contact form#contactForm :-ms-input-placeholder {
 .referal{
   background: rgba(238, 238, 231, 0.5);
 }
+
+.bg-blue{
+  background-color: #113859;
+}
+
+
+
+
+
 
 
 
