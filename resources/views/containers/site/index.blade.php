@@ -131,10 +131,10 @@
 
                         <div class="text-md-left ">
                        
-                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 17px;">Top 7 – 2017 Psychologist Board Exam</b></li>
-                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 17px;">Top 10 – 2015 Psychometrician Board Exam</b></li>
-                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 17px;">Faculty, Ateneo De Manila University </b></li>
-                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 17px;">Counseling Psychologist, Ateneo Bulatao Center for Psychological Services</b></li>
+                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 7 – 2017 Psychologist Board Exam</b></li>
+                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 10 – 2015 Psychometrician Board Exam</b></li>
+                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Faculty, Ateneo De Manila University </b></li>
+                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Counseling Psychologist, Ateneo Bulatao Center for Psychological Services</b></li>
                         
                         </div>
 
