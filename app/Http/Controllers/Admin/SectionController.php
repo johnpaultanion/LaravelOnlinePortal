@@ -43,7 +43,22 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'lesson_id' => 'required',
+            
+        ]);
+
+        // Create Category
+         $section = new Section;
+         $section->name = $request->input('name');
+         $section->lesson_id = $request->input('lesson_id');
+         $section->user_id = auth()->user()->id;
+       
+         $section->save();
+ 
+         return redirect('admin/lessons')->with('success', 'Section Created');
+
     }
 
     /**

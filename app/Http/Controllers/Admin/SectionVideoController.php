@@ -51,7 +51,7 @@ class SectionVideoController extends Controller
          $this->validate($request, [
 
              'section_id' => 'required',
-
+             'video_name' => 'required',
          ]);
 
          $userid = auth()->user()->id;
@@ -59,21 +59,29 @@ class SectionVideoController extends Controller
          if($request->hasFile('video_name')){
            foreach ($request->video_name as $file){
 
-                 $filenamewext = $file->getClientOriginalName();
-                 $filename = pathinfo($filenamewext, PATHINFO_FILENAME);
-                 $extension = $file->getClientOriginalExtension();
+            if (false !== mb_strpos($file->getMimeType(), "video")) {
+                $filenamewext = $file->getClientOriginalName();
+                $filename = pathinfo($filenamewext, PATHINFO_FILENAME);
+                $extension = $file->getClientOriginalExtension();
 
-                 $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
-                 $path = $file->storeAs('public/video_file', $fileNameToStore);
+                $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
+                $path = $file->storeAs('public/video_file', $fileNameToStore);
 
-                 $save = new SectionVideo;
-                 $save->video_name = $fileNameToStore;
+                $save = new SectionVideo;
+                $save->video_name = $fileNameToStore;
 
-                 $save->title = "title";
-                 $save->section_id =  $request->input('section_id');
+                $save->title = "title";
+                $save->section_id =  $request->input('section_id');
 
 
-                 $save->save();
+                $save->save();
+
+             }else{
+
+                return redirect('admin/sectionvideo/create')->with('error', 'The Video File, is not a video. must be a file of type: mp4, ogx, oga, ogv, ogg, webm');
+
+             }
+                
              }
          }
 
@@ -82,9 +90,6 @@ class SectionVideoController extends Controller
 
 
         return redirect('admin/lessons')->with('success', 'Successfully Added a Videos');
-
-
-
 
     }
 

@@ -18,7 +18,7 @@ use App\Http\Controllers\Site\IndexController;
 |
 */
 
-Route::get('/', [IndexController::class, 'index'])->name('site.index');
+Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('landingpage');
 
 Auth::routes();
 
@@ -31,7 +31,7 @@ Route::middleware(['auth','guest'])->group(function () {
 Route::resource('/admin/lessons','App\Http\Controllers\Admin\LessonController');
 });
 
-Route::resource('/site','App\Http\Controllers\Site\IndexController');
+Route::resource('/site/studentportal','App\Http\Controllers\Site\IndexController');
 
 //admin section vids
 Route::middleware(['auth','guest'])->group(function () {

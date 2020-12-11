@@ -32717,3 +32717,26 @@ a.text-muted:hover {
   font-size:25px;
   
 }
+
+.bg-imove{
+
+  background-color: #113859;
+
+}
+
+.category{
+ 
+  margin-top: 5px;
+  border: solid 1px #978a8a;
+  text-align: center;
+  color: #111;
+  background-color: #fff;
+  width: 100%;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  height: 50px;
+  border-radius: 25px;
+ 
+
+}
+

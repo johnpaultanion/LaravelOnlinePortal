@@ -1,7 +1,10 @@
 
-<nav class="navbar navbar-expand-md navbar-white navbar-light">
+<nav class="navbar navbar-expand-lg bg-imove static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">E-Learning</a>
+        <a class="navbar-brand" href="/">
+             <img class="brand-image" style="width: 100px" src="/img/logo-top.png" alt=""/>
+        </a>
+       
         <button class="navbar-toggler mb-2" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,5 +44,10 @@
             </ul>
        
         </div>  
+
     </div>
+
+
+    
+
 </nav>
