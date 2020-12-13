@@ -101,6 +101,7 @@
                 <br>
                     <div class="row">
                         <div class="toptext">
+
                             <div class="col-md-10 ml-2 text-md-left">
                                 <div style="font-size: 27px;" class="font-weight-bold text-dark"><b>Ace the Philippine Psychometrician board exam with the help of board topnotchers, industry experts, and lecturers from top universities. </b> </div>
                            </div>
@@ -526,7 +527,7 @@
 
                        <p class="font-weight-normal mt-2">Mode of payment by: <img style="width: 7em" src="img/paymonggologo.png" alt=""></p>
                    
-                       
+
                     </div>
                 </div>
             </div>
