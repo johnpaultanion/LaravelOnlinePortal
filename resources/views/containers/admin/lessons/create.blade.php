@@ -35,6 +35,15 @@
                     {{Form::label('thumbnail', 'Thumbnail')}}<br>
                     {{Form::file('thumbnail')}}
                 </div>
+
+                <div class="form-group">
+                    <label for="category-content">Select a Category</label>
+                    <select name="category_id" class="form-control">
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+                </div>
              
                 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
             {!! Form::close() !!}

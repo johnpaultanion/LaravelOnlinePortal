@@ -2,9 +2,7 @@
 
 @section('sub-title','Categories')
 
-@section('navbar')
-    @include('../components.site.navbar')
-@endsection
+
 
 @section('main-content')
     <div class="bg-light" style="height: 100vh">

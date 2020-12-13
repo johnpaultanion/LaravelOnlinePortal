@@ -38,9 +38,12 @@
                     <i>{{$lesson->thumbnail}}</i>
                 </div>
                 <div class="form-group">
-                    {{Form::label('video_name', 'Video File')}}<br>
-                    {{Form::file('video_name')}}
-                    <i>{{$lesson->video_name}}</i>
+                    <label for="category-content">Select a Category - <code>{{$lesson->category->name}}</code> </label>
+                    <select name="category_id" class="form-control">
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
                 </div>
 
                 {{Form::hidden('_method','PUT')}}

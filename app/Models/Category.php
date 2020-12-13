@@ -15,8 +15,8 @@ class category extends Model
        
     ];
 
-    public function lesson(){
-        return $this->belongsTo(Lesson::class);
+    public function lessons(){
+        return $this->hasMany(Lesson::class);
     }
 
 }

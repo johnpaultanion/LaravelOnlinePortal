@@ -33,72 +33,28 @@ class LessonController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'thumbnail' => 'required|max:1999',
-            'video_name' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|required'
-            
-
-            
-            
+            'thumbnail' => 'required|max:1999'
         ]);
 
         $userid = auth()->user()->id;
 
         if($request->hasFile('thumbnail')){
-
-           
         
             $filenameWithExt = $request->file('thumbnail')->getClientOriginalName();
-            // Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
             $extension = $request->file('thumbnail')->getClientOriginalExtension();
-            // Filename to store
             $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
-            // Upload Image
-            $path = $request->file('thumbnail')->storeAs('public/thumbnail', $fileNameToStore);
-		
-		
-        } else {
-            $fileNameToStore = 'nothumbnail.jpg';
-        }
-
-        
-
-         // Create lesson
+            $path = $request->file('thumbnail')->move(public_path('/filestorage/thumbnail'), $fileNameToStore);
+            
+            
          $lesson = new Lesson;
          $lesson->title = $request->input('title');
          $lesson->description = $request->input('description');
          $lesson->thumbnail = $fileNameToStore;
-
-
-
-         if($request->hasFile('video_name')){
-        
-            $filenameWithExt = $request->file('video_name')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('video_name')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStoreV= $filename.'_'.time().'_'.$userid.'.'.$extension;
-            // Upload Image
-            $path = $request->file('video_name')->storeAs('public/video_file', $fileNameToStoreV);
-		
-		
-        } else {
-            $fileNameToStoreV = 'novideo.mp4';
-        }
-
-
-
-
-         $lesson->video_name = $fileNameToStoreV;
          $lesson->user_id = auth()->user()->id;
-       
          $lesson->save();
- 
-         return redirect('admin/lessons')->with('success', 'Lesson Created');
-
+         return redirect('admin/lessons')->with('success', 'Lesson Created');		
+        }
         
      
 

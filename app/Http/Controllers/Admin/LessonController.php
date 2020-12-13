@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lesson;
+use App\Models\Category;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-
+use File;
 use DB;
+
 class LessonController extends Controller
 {
     public function index(){
@@ -20,9 +22,15 @@ class LessonController extends Controller
 
     }
 
-    public function create()
+    public function create($category_id = null)
     {
-        return view('containers.admin.lessons.create');
+
+        $categories = null;
+        if(!$category_id){
+            $categories = Category::all();
+        }   
+
+        return view('containers.admin.lessons.create',['category_id'=>$category_id, 'categories'=>$categories]);
     }
 
     public function store(Request $request)
@@ -30,11 +38,8 @@ class LessonController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'thumbnail' => 'required|max:1999'
-            // 'video_name' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|required'
-            
-
-            
+            'thumbnail' => 'required|max:5999',
+            'category_id' => 'required'
             
         ]);
 
@@ -52,58 +57,18 @@ class LessonController extends Controller
             // Filename to store
             $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
             // Upload Image
-            $path = $request->file('thumbnail')->storeAs('public/thumbnail', $fileNameToStore);
-		
-		
-        } else {
-            $fileNameToStore = 'nothumbnail.jpg';
-        }
-
-        
-
-         // Create lesson
-         $lesson = new Lesson;
-         $lesson->title = $request->input('title');
-         $lesson->description = $request->input('description');
-         $lesson->thumbnail = $fileNameToStore;
-
-
-
-        //  if($request->hasFile('video_name')){
-        
-        //     $filenameWithExt = $request->file('video_name')->getClientOriginalName();
-        //     // Get just filename
-        //     $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        //     // Get just ext
-        //     $extension = $request->file('video_name')->getClientOriginalExtension();
-        //     // Filename to store
-        //     $fileNameToStoreV= $filename.'_'.time().'_'.$userid.'.'.$extension;
-        //     // Upload Image
-        //     $path = $request->file('video_name')->storeAs('public/video_file', $fileNameToStoreV);
-		
-		
-        // } else {
-        //     $fileNameToStoreV = 'novideo.mp4';
-        // }
-
-
-
-
-         $lesson->user_id = auth()->user()->id;
-         $lesson->category_id = "1";
-         
-        
-         $lesson->save();
- 
-         return redirect('admin/lessons')->with('success', 'Lesson Created');
-
-        
-     
-
-
-
-
-
+            $path = $request->file('thumbnail')->move(public_path('/filestorage/thumbnail'), $fileNameToStore);
+            
+            // Create lesson
+            $lesson = new Lesson;
+            $lesson->title = $request->input('title');
+            $lesson->description = $request->input('description');
+            $lesson->thumbnail = $fileNameToStore;
+            $lesson->user_id = auth()->user()->id;
+            $lesson->category_id = $request->input('category_id');
+            $lesson->save();
+            return redirect('admin/lessons')->with('success', 'Lesson Created');
+        } 
     }
 
 
@@ -114,7 +79,7 @@ class LessonController extends Controller
         
     }
 
-    public function edit($id)
+    public function edit($id , $category_id = null)
     {
         $lesson = Lesson::find($id);
         
@@ -128,19 +93,20 @@ class LessonController extends Controller
             return redirect('admin/lessons')->with('error', 'Unauthorized Page');
         }
 
-        return view('containers.admin.lessons.edit')->with('lesson', $lesson);
+        $categories = null;
+        if(!$category_id){
+            $categories = Category::all();
+        }   
+
+        return view('containers.admin.lessons.edit',['category_id'=>$category_id, 'categories'=>$categories])->with('lesson', $lesson);
     }
 
    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'title' => 'required',
-            'description' => 'required',
-            'thumbnail' => 'nullable|max:1999',
-            'video_name' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|nullable'
-            
-
-            
+            'description' => 'required'
+           
             
         ]);
 
@@ -158,42 +124,18 @@ class LessonController extends Controller
             // Filename to store
             $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
             // Upload Image
-            $path = $request->file('thumbnail')->storeAs('public/thumbnail', $fileNameToStore);
+            $path = $request->file('thumbnail')->move(public_path('/filestorage/thumbnail'), $fileNameToStore);
             // Delete file if exists
-            Storage::delete('public/thumbnail/'.$lesson->thumbnail);
-		
+            File::delete(public_path('/filestorage/thumbnail/'.$lesson->thumbnail));
         }
 
         // Update Post
         $lesson->title = $request->input('title');
         $lesson->description = $request->input('description');
-
         if($request->hasFile('thumbnail')){
             $lesson->thumbnail = $fileNameToStore;
         }
-
-
-        if($request->hasFile('video_name')){
-            // Get filename with the extension
-            $filenameWithExt = $request->file('video_name')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('video_name')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
-            // Upload Image
-            $path = $request->file('video_name')->storeAs('public/video_file', $fileNameToStore);
-            // Delete file if exists
-            Storage::delete('public/video_file/'.$lesson->video_name);
-		
-        }
-
-        if($request->hasFile('video_name')){
-            $lesson->video_name = $fileNameToStore;
-        }
-
-
+        $lesson->category_id = $request->input('category_id');
         $lesson->save();
 
         return redirect('/admin/lessons')->with('success', 'Lesson Updated');
@@ -220,14 +162,8 @@ class LessonController extends Controller
 
         if($lesson->thumbnail != 'nothumbnail.jpg'){
             // Delete Image
-            Storage::delete('public/thumbnail/'.$lesson->thumbnail);
+            File::delete(public_path('/filestorage/thumbnail/'.$lesson->thumbnail));
         }
-
-        if($lesson->video_name != 'novideo.mp4'){
-            // Delete Vid
-            Storage::delete('public/video_file/'.$lesson->video_name);
-        }
-        
         $lesson->delete();
         return redirect('admin/lessons')->with('success', 'Lesson Removed');
 

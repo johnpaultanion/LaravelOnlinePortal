@@ -74,7 +74,7 @@
 
                         @if(Auth::user()->id == $lesson->user_id)
 
-                        <a href="/admin/sectionvideo/create" class="btn btn-sm btn-warning"><i class="fas fa-plus-circle"> Add a Videos</i></a> 
+                        <a href="/admin/sectionvideo/createvids/{{$lesson->id}}" class="btn btn-sm btn-warning"><i class="fas fa-plus-circle"> Add a Videos</i></a> 
                         <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-pen-alt"> Edit</i></a> 
                            
                             {!!Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@destroy', $lesson->id], 'method' => 'POST'])!!}

@@ -18,6 +18,7 @@ class CreateSectionVideosTable extends Migration
             $table->string('video_name');
             $table->string('title');
             $table->string('section_id');
+            $table->string('lesson_id');
             $table->timestamps();
         });
     }

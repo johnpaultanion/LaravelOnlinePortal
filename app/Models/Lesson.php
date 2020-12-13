@@ -21,8 +21,11 @@ class Lesson extends Model
         return $this->belongsTo(User::class);
     }
     
-    public function categories(){
-        return $this->hasMany(Category::class);
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+    public function section_video(){
+        return $this->hasMany(SectionVideo::class);
     }
     
 }

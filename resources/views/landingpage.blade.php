@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </li> -->
-                <li class="nav-item enroll"><a class="nav-link js-scroll-trigger" href="/">Enroll Now!</a></li>
+                <li class="nav-item enroll"><a class="nav-link js-scroll-trigger" href="/enrollnow">Enroll Now!</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#program">Program</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#lecturers">Lecturers</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
@@ -96,25 +96,28 @@
         </nav>
         <!-- Masthead-->
         <header class="masthead">
+
             <div class="container">
                 <br>
                     <div class="row">
+                        <div class="toptext">
                             <div class="col-md-10 ml-2 text-md-left">
-                                <div class="masthead-subheading"><b class="text-top">Ace the Philippine Psychometrician board exam with the help of board topnotchers, industry experts, and lecturers from top universities. </b> </div>
+                                <div style="font-size: 27px;" class="font-weight-bold text-dark"><b>Ace the Philippine Psychometrician board exam with the help of board topnotchers, industry experts, and lecturers from top universities. </b> </div>
                            </div>
-                        
-                            <div class="col-md-4 mt-5">
-                            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger " href="#toplecturers">Our Lecturers <i class="fas fa-arrow-down"></i></a>
-                            </div>
-                        
-                </div>
+                        </div>
+                           
+                    </div>
 
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="toplecturers">
+        <section class="page-section" id="lecturers">
         
             <div class="container">
+
+            <div class="text-center text-dark mb-2">
+                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+            </div>
 
 
             <div class="row">
@@ -126,15 +129,15 @@
                                 <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
                                 <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Marie Therese Ocampo-Rigor, RPsy.png" alt="" />
                             </span>
-                            <h5 class="my-3 mt-5 text-warning">Marie Therese Ocampo-Rigor, RPm, RPsy</h5>
+                            <h5 class="my-3 mt-5 text-warning">Therese Rigor, RPm, RPsy</h5>
                         </div>
 
                         <div class="text-md-left ">
                        
-                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 7 – 2017 Psychologist Board Exam</b></li>
-                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 10 – 2015 Psychometrician Board Exam</b></li>
                         <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Faculty, Ateneo De Manila University </b></li>
                         <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Counseling Psychologist, Ateneo Bulatao Center for Psychological Services</b></li>
+                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 7 – 2017 Psychologist Board Exam</b></li>
+                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 10 – 2015 Psychometrician Board Exam</b></li>
                         
                         </div>
 
@@ -152,7 +155,7 @@
                             <h5 class="my-3 mt-5  text-warning">Mahjalin Airaza Bugtong-Diez, RPm, RPsy</h5>
                         </div>
 
-                        <div class="text-md-left ">
+                        <div class="text-md-left">
                         
                         <li><b class="subtext-lecturers p-0 m-0  text-dark" style="font-size: 15px;">Psychologist, GrayMatters Psychological and Consultancy, Inc. </b></li>
                         <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Faculty, University of Batangas</b></li>
@@ -194,14 +197,14 @@
                                 <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
                                 <img class="mx-auto rounded-circle" style="width: 150px;" src="img/Maricris Lad-ey Neyney, RGC, RPm.png" alt="" />
                             </span>
-                            <h5 class="my-3 mt-5  text-warning">Maricris Lad-ey Neyney, RGC, RPm, LPT</h5>
+                            <h5 class="my-3 mt-5  text-warning">Maricris Neyney, RGC, RPm, LPT</h5>
                         </div>
 
                             <div class="text-md-left ">
-                        
+
+                            <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Faculty, Ilocos Sur Polytechnic State College </b></li>
                             <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 3 – 2011 Guidance Counselor Licensure Exam</b></li>
                             <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 8 – 2018 Psychometrician Board Exam</b></li>
-                            <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Faculty, Ilocos Sur Polytechnic State College </b></li>
                             </div>
                     </div>
 
@@ -216,9 +219,9 @@
                         </div>
 
                         <div class="text-md-left">
+                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Faculty, St. Mary’s University – Bayombong</b></li>
                         <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 2, 2014 Psychometrician Licensure Exam</b> <br></li>
                         <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Top 5, 2012 Guidance Counselor Licensure Exam</b> <br></li>
-                        <li><b class="subtext-lecturers p-0 m-0 text-dark" style="font-size: 15px;">Faculty, St. Mary’s University – Bayombong</b></li>
                         </div>
                     </div>
                     
@@ -279,7 +282,7 @@
                 <br>
                 <br>
                 <div class="text-center">
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Enroll Now!</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/enrollnow">Enroll Now!</a>
                 </div>
             </div>
 
@@ -295,8 +298,8 @@
                 </div>
                 
         </section>
-
-         <section class="page-section" id="/">
+        <!-- program incunclision-->
+         <section class="page-section" id="program">
             <div class="container">
                     <h3 class="section-heading text-uppercase text-center mb-5 ">WHEN YOU ENROLL WITH US, WE PROMISE TO HELP YOU SUCCEED.</h3>
                     
@@ -309,31 +312,61 @@
                     <li class="font-weight-normal large my-2" style="font-size: 18px;">Exclusive pass to live-streamed exam rationalization sessions where you’ll get to interact with the lecturers</li>
                     <li class="font-weight-normal large my-2" style="font-size: 18px;">Lifetime access to the program until you pass the board exam</li>
                   
-                    <br>
+                   
 
                      <div class=" m-1 p-1">     
                     
                       
-                        <h1 class="section-heading text-uppercase text-center  text-warning" style="font-size: 35px;">Php 6,750.00 <code class="text-warning"> only </code></h1>
+                        <h1 class="section-heading text-uppercase text-center  text-warning" style="font-size: 30px;">Php 6,750.00 only </h1>
 
                         <br>
                         <div class="text-center">
-                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger " href="#services">Enroll Now!</a>
+                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger " href="/enrollnow">Enroll Now!</a>
                         </div>
 
-                        <br>
-                        
+                       
                     </div>
 
             </div>
         </section>
+
+        <section class="page-section bg-blue" id="/">
+
+            <div class="container">
+                <h3 class="section-heading text-uppercase text-center text-white">UNLIMITED ACCESS SO YOU CAN GAIN MASTERY OF THE COURSES</h3>
+                <br>
+                <div class="row">
+                    <div class="col-md-5 pt-5"> 
+                        <h5 class="text-white font-weight-light text-justify">Our learning platform is accessible 24 hours a day, seven days a week. Study at your own pace; you can watch part of a lecture, pause it, and take some time to digest the lessons to ensure that you are mastering the topic before moving on to the next section. Review at your own speed and get the most out of the review program.  </h5>
+                    </div>
+                    <div class="col-md-7 pt-5 p1 ">
+                        <div class="col-md-12">
+                        
+                            <div class="col-md-12">
+                                <h5 class="text-white font-weight-bold">Here’s a sneak peak inside iMove Digital Learning:</h5>
+                            </div>
+
+                            <div class="col-md-12 cover-body">
+                                <iframe class=" col-md-12" src="img/vid.mp4" width="500" height="400" frameborder="0"></iframe>
+                            </div>
+                        
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 pt-5 text-center">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/enrollnow">Enroll Now!</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         <!-- About-->
 
-        <section class="page-section bg-blue" id="program">
+        <section class="page-section bg-dark" id="/">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase  text-white"><code class="section-heading text-uppercase text-center  text-warning" style="font-size: 50px;"> FREE</code> SERVICES</h2>
-                    <h3 class="section-subheading text-white">WE TAKE YOUR DREAM SERIOUSLY. WE GIVE TOTAL SUPPORT BY PROVIDING THESE SERVICES FOR FREE:</h3>
+                    <h2 class="section-heading text-uppercase  text-white">FREE SERVICES</h2>
+                    <h4 class="timeline-body font-weight-light text-white pb-2">WE TAKE YOUR DREAM SERIOUSLY. WE GIVE TOTAL SUPPORT BY PROVIDING THESE SERVICES FOR FREE:</h4>
                 </div>
 
 
@@ -375,7 +408,7 @@
         </section>
 
 
-        <section class="page-section" id="lecturers">
+        <section class="page-section" id="/">
             <div class="container">
                 <div class="text-center">
                     
@@ -388,7 +421,7 @@
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="img/icelmonsale.jpg" alt="" />
-                            <h4>Dr. Icel Monsale , RGC</h4>
+                            <h5 class="pt-3">Dr. Icel Monsale , RGC</h5>
                              
                            
                     
@@ -397,14 +430,14 @@
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="img/Irish Movido, RPsy.png" alt="" />
-                            <h4>Irish Movido , RPsy</h4>
+                            <h5 class="pt-3">Irish Movido , RPsy</h5>
                             
                             </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="img/ileenmendoza.jpg" alt="" />
-                            <h4>Ileen Mendoza , RGC</h4>
+                            <h5 class="pt-3">Ileen Mendoza , RGC</h5>
                            
                             <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
@@ -438,36 +471,7 @@
         </section>
 
 
-        <section class="page-section bg-blue" id="/">
-
-            <div class="container">
-                <h3 class="section-heading text-uppercase text-center text-white">UNLIMITED ACCESS SO YOU CAN GAIN MASTERY OF THE COURSES</h3>
-                <br>
-                <div class="row">
-                    <div class="col-md-5 pt-5"> 
-                        <h5 class="text-white font-weight-light text-justify">Our learning platform is accessible 24 hours a day, seven days a week. Study at your own pace; you can watch part of a lecture, pause it, and take some time to digest the lessons to ensure that you are mastering the topic before moving on to the next section. Review at your own speed and get the most out of the review program.  </h5>
-                    </div>
-                    <div class="col-md-7 pt-5 p1 ">
-                        <div class="col-md-12">
-                           
-                            <div class="col-md-12">
-                                <h5 class="text-white font-weight-bold">Here’s a sneak peak inside iMove Digital Learning:</h5>
-                            </div>
-
-                            <div class="col-md-12 cover-body">
-                                <iframe class=" col-md-12" src="img/vid.mp4" width="500" height="400" frameborder="0"></iframe>
-                            </div>
-                           
-                        </div>
-
-                    </div>
-                    <div class="col-md-12 pt-5 text-center">
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Enroll Now!</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+       
 
       
 
@@ -519,8 +523,9 @@
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-right">
-                        <a class="mr-3" href="#!">Privacy Policy</a>
-                        <a href="#!">Terms of Use</a>
+
+                       <p class="font-weight-normal mt-2">Mode of payment by: <img style="width: 7em" src="img/paymonggologo.png" alt=""></p>
+                   
                     </div>
                 </div>
             </div>

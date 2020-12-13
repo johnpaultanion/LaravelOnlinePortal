@@ -13,5 +13,12 @@ class LandingpageController extends Controller
         return view('landingpage');
     }
 
+    public function enrollment(){
+       
+        return view('enrollnow');
+    }
+
+    
+
    
 }

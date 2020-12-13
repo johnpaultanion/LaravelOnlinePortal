@@ -1,53 +1,41 @@
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <!-- Left navbar links -->
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+  </ul>
 
-<nav class="navbar navbar-expand-lg bg-imove static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-             <img class="brand-image" style="width: 100px" src="/img/logo-top.png" alt=""/>
-        </a>
-       
-        <button class="navbar-toggler mb-2" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto text-center">
-                <li class="nav-item">
-                    <div class="input-group">
-                        <input type="search" class="form-control form-control-navbar" placeholder="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </li>
-                @if (Auth::user())
-                    @if (Auth::user()->role == 'teacher')
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/dashboard">Dashboard</a>
-                        </li>
-                    @endif
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Sign Up</a>
-                    </li>
-                @endif
-            </ul>
-       
-        </div>  
-
-    </div>
-
-
-    
-
+  <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown user-menu">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+              <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
+                   class="user-image img-circle elevation-2" alt="User Image">
+              <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <!-- User image -->
+              <li class="user-header bg-primary">
+                  <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
+                       class="img-circle elevation-2"
+                       alt="User Image">
+                  <p>
+                      {{ Auth::user()->name }}
+                      <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
+                  </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="#" class="btn btn-default btn-flat float-right"
+                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      Sign out
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+              </li>
+          </ul>
+      </li>
+  </ul>
 </nav>

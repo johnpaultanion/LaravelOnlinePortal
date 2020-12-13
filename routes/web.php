@@ -19,6 +19,7 @@ use App\Http\Controllers\Site\IndexController;
 */
 
 Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('landingpage');
+Route::get('/enrollnow', [App\Http\Controllers\LandingpageController::class, 'enrollment'])->name('enrollment');
 
 Auth::routes();
 
@@ -31,16 +32,44 @@ Route::middleware(['auth','guest'])->group(function () {
 Route::resource('/admin/lessons','App\Http\Controllers\Admin\LessonController');
 });
 
-Route::resource('/site/studentportal','App\Http\Controllers\Site\IndexController');
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/lessons/create{category_id?}','App\Http\Controllers\Admin\LessonsController@create');
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/lessons/edit{category_id?}','App\Http\Controllers\Admin\LessonsController@edit');
+});
+
+///studentportal
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/site/studentportal','App\Http\Controllers\Site\IndexController@index');
+
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::post('search', ['as' => 'search', 'uses' => 'App\Http\Controllers\Site\IndexController@index']);
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/site/{id?}','App\Http\Controllers\Site\IndexController@viewlecture');
+});
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/site/viewvideos/{video_id?}','App\Http\Controllers\Site\IndexController@viewvideos');
+});
 
 //admin section vids
 Route::middleware(['auth','guest'])->group(function () {
     Route::resource('/admin/sectionvideo','App\Http\Controllers\Admin\SectionVideoController');
-    });
+});
 
 Route::middleware(['auth','guest'])->group(function () {
-    Route::get('/admin/sectionvideo/create{section_id?}','App\Http\Controllers\Admin\SectionVideoController@create');
-    });
+Route::get('/admin/sectionvideo/createvids/{lesson_id?}','App\Http\Controllers\Admin\SectionVideoController@createvids');
+});
+
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/sectionvideo/createvids{section_id?}','App\Http\Controllers\Admin\SectionVideoController@create');
+});
 
 //admin sections
 Route::middleware(['auth','guest'])->group(function () {

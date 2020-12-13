@@ -6,6 +6,7 @@ use App\Models\Section;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use File;
 
 
 class SectionController extends Controller
