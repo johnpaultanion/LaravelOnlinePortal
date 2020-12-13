@@ -2,5 +2,5 @@
     <div class="float-right d-none d-sm-block">
         {{-- <b>Version</b> 3.1.0-pre --}}
     </div>
-    <strong>Copyright &copy; 2020-2021 E-LEARNING</strong> All rights reserved.
+    <strong>Copyright &copy; iMOVE DEGITAL LEARNING 2020</strong> All rights reserved.
 </footer>
