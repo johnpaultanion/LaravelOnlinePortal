@@ -526,6 +526,7 @@
 
                        <p class="font-weight-normal mt-2">Mode of payment by: <img style="width: 7em" src="img/paymonggologo.png" alt=""></p>
                    
+                       
                     </div>
                 </div>
             </div>
