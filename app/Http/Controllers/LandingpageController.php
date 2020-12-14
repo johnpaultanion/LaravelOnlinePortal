@@ -32,6 +32,7 @@ class LandingpageController extends Controller
 
     public function store(Request $request)
     {
+        
         $this->validate($request, [
             'name' => 'required',
             'school' => 'required',
