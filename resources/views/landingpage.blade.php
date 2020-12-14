@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </li> -->
-                <li class="nav-item enroll"><a class="nav-link js-scroll-trigger" href="/enrollnow">Enroll Now!</a></li>
+                <li class="nav-item enroll"><a class="nav-link js-scroll-trigger" href="/enrollment/create">Enroll Now!</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#program">Program</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#lecturers">Lecturers</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
@@ -283,7 +283,7 @@
                 <br>
                 <br>
                 <div class="text-center">
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/enrollnow">Enroll Now!</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/enrollment/create">Enroll Now!</a>
                 </div>
             </div>
 
@@ -322,7 +322,7 @@
 
                         <br>
                         <div class="text-center">
-                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger " href="/enrollnow">Enroll Now!</a>
+                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger " href="/enrollment/create">Enroll Now!</a>
                         </div>
 
                        
@@ -355,7 +355,7 @@
 
                     </div>
                     <div class="col-md-12 pt-5 text-center">
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/enrollnow">Enroll Now!</a>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/enrollment/create">Enroll Now!</a>
                     </div>
 
                 </div>
