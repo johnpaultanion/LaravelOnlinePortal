@@ -19,7 +19,8 @@ use App\Http\Controllers\Site\IndexController;
 */
 
 Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('landingpage');
-Route::get('/enrollnow', [App\Http\Controllers\LandingpageController::class, 'enrollment'])->name('enrollment');
+
+Route::resource('/enrollment','App\Http\Controllers\LandingpageController');
 
 Auth::routes();
 
@@ -49,6 +50,7 @@ Route::get('/site/studentportal','App\Http\Controllers\Site\IndexController@inde
 Route::middleware(['auth','guest'])->group(function () {
 Route::post('search', ['as' => 'search', 'uses' => 'App\Http\Controllers\Site\IndexController@index']);
 });
+
 
 Route::middleware(['auth','guest'])->group(function () {
 Route::get('/site/{id?}','App\Http\Controllers\Site\IndexController@viewlecture');

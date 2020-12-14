@@ -23,20 +23,22 @@
     <div class="wrapper">
 
         @yield('navbar')
-    
+
         @yield('main-sidebar')
-    
+
         @yield('content')
-    
+
         @yield('main-content')
-    
+
         @yield('footer')
-    
+
     </div>
     <!-- ./wrapper -->
 </div>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+
+
 
 @yield('third_party_scripts')
 

@@ -26,18 +26,12 @@ class IndexController extends Controller
         // return view('containers.site.studentportal')->with('lessons', $lessons);
     }
 
-    public function viewlecture($id)
-    { 
+    public function viewlecture(Request $request, $id)
+    {
         
-        $lesson = Lesson::find($id);
-        $section_videos = SectionVideo::where('lesson_id', $id)->paginate(1);
-        $section_videosalls = SectionVideo::all();
-        $lessons = Lesson::orderBy('created_at','desc')->paginate(4);
-       
+        $section_videos = SectionVideo::where('lesson_id', $id)->get();
+        return view('containers.site.viewlecture')->with('section_videos', $section_videos);
         
-        // return view('containers.site.viewlecture')->with('lesson', $lesson);
-        return view('containers.site.viewlecture',['lesson'=>$lesson, 'section_videos'=>$section_videos , 'section_videosalls'=>$section_videosalls , 'lessons'=>$lessons]);
-
         
     }
     public function viewvideos($video_id){

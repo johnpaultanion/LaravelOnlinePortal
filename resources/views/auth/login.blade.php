@@ -7,8 +7,8 @@
 @section('main-content')
     <div class="bg-light" style="height: 100vh">
         <div class="row">
-            <div class="col-md-4 offset-8 mx-auto">
-                <div class="card p-4 mt-5 m-2">
+            <div class="col-md-4 mx-auto pt-5">
+                <div class="card p-4 mt-3 m-2">
                     <p class="login-box-msg font-weight-bold">Log In to Your Account!</p>
             
                         <form method="post" action="{{ url('/login') }}">
@@ -63,4 +63,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('../components.site.footer')
 @endsection

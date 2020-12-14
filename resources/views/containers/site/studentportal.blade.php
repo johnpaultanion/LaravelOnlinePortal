@@ -58,14 +58,19 @@
                                     @if (count($lessons))
 
                                             @forelse ($lessons as $lesson)
-                                                <a  href="/site/{{$lesson->id}}">
+                                                
                                                     <div class="viewlecture col-md-3 card lessoncard">
                                                         
                                                             
                                                         <img class="card-img-top" style="height: 10rem;"  src="/filestorage/thumbnail/{{$lesson->thumbnail}}" alt="Card image cap" />
                                                             
+                                                        <a href="/site/{{$lesson->id}}"  class="btn btn-primary">
+                                                            View Lesson
+                                                        </a>
+
                                                         <div class="card-body">
-                                                            <a  href="/site/{{$lesson->id}}">
+                                                        
+                                                            
                                                                         <b>
                                                                         {!! link_to_route('lessons.show', $lesson->title, $lesson->id) !!}
                                                                         </b>
@@ -75,12 +80,12 @@
                                                                         Read more...
                                                                         </a>
                                                                         </p>
-                                                            </a>
+                                                           
                                                            
                                                             </div>
                                                         
                                                     </div>
-                                                </a>
+                                                
                                                 @empty
                                                 <tr>No result found</tr>
                                                 @endforelse
@@ -106,6 +111,12 @@
 
                 </div>
             </div>
+
+            
+            
+            
+
+           
         </section>
         <!-- /.content -->
 
@@ -113,6 +124,8 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
+
+
 
 @section('footer')
     @include('../components.site.footer')
