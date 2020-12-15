@@ -10035,6 +10035,11 @@ p {
 .page-section {
   padding: 6rem 0;
 }
+
+.page-modeofpayment{
+  padding: 2rem 0;
+}
+
 .page-section h2.section-heading {
   font-size: 2.5rem;
   margin-top: 0;

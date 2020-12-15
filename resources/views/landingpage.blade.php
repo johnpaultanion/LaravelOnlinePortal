@@ -103,7 +103,7 @@
                         <div class="toptext">
 
                             <div class="col-md-10 ml-2 text-md-left">
-                                <div style="font-size: 27px;" class="font-weight-bold text-dark"><b>Ace the Philippine Psychometrician board exam with the help of board topnotchers, industry experts, and lecturers from top universities. </b> </div>
+                                <div style="font-size: 34px;" class="font-weight-bold text-dark"><b>Ace the Philippine Psychometrician board exam with the help of board topnotchers, industry experts, and lecturers from top universities. </b> </div>
                            </div>
                         </div>
                            
@@ -331,6 +331,32 @@
             </div>
         </section>
 
+        <section class="page-modeofpayment bg-dark" id="program">
+            <div class="container bg-white pt-2">
+                  <h3 class="section-heading text-uppercase text-center ">Mode of payment</h3>
+                  <div class="row">
+                  <div class="col-md-12 ">
+                    <div class="row"> 
+                        <div class="col-md-12 text-center">
+                        
+                            <img style="width: 7rem" src="img/visa.png" alt="">
+                            <img style="width: 7rem" src="img/gcash.png" alt="">
+                            <img style="width: 7rem" src="img/grabpay.png" alt="">
+                        
+                        </div>
+                        <div class="col-md-12  text-center">
+                            <img style="width: 7rem" src="img/711.png" alt="">
+                            <img style="width: 7rem" src="img/cebuana.png" alt="">
+                            <img style="width: 7rem" src="img/mlhuillier.png" alt="">
+                            <img style="width: 7rem" src="img/coinsph.png" alt="">
+                        </div>
+                  </div>
+                  </div>
+                  </div>
+
+            </div>
+        </section>
+
         <section class="page-section bg-blue" id="/">
 
             <div class="container">
@@ -356,6 +382,7 @@
                     </div>
                     <div class="col-md-12 pt-5 text-center">
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/enrollment/create">Enroll Now!</a>
+                    
                     </div>
 
                 </div>
@@ -525,9 +552,7 @@
                     </div>
                     <div class="col-lg-4 text-lg-right">
 
-                       <p class="font-weight-normal mt-2">Mode of payment by: <img style="width: 7em" src="img/paymonggologo.png" alt=""></p>
-                   
-
+                     
                     </div>
                 </div>
             </div>

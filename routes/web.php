@@ -20,7 +20,7 @@ use App\Http\Controllers\Site\IndexController;
 
 Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('landingpage');
 
-Route::resource('/enrollment','App\Http\Controllers\LandingpageController');
+Route::resource('enrollment','App\Http\Controllers\LandingpageController');
 
 Auth::routes();
 

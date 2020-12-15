@@ -10,6 +10,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 class LandingpageController extends Controller
@@ -30,33 +32,35 @@ class LandingpageController extends Controller
         return view('enrollment.create');
     }
 
+
     public function store(Request $request)
     {
-        
-        $this->validate($request, [
-            'name' => 'required',
-            'school' => 'required',
-            'schooladdress' => 'required',
-            'email' => 'email|required',
-            'mobilenumber' => 'required',
-            'yeargraduated' => 'required',
 
-            
-            
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'school' => ['required'],
+            'school_address' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'mobile_number' => ['required'],
+            'yeargrad' => ['required'],
         ]);
 
-        $student = new User;
-        $student->name = $request->input('name');
-        $student->school = $request->input('school');
-        $student->school_address = $request->input('schooladdress');
-        $student->email = $request->input('email');
-        $student->mobile_number = $request->input('mobilenumber');
-        $student->yeargrad = $request->input('yeargraduated');
-        $student->role = "student";
-        
-        $student->save();
-
+        $credentials = [
+            'name' => $request->name,
+            'school' => $request->school,
+            'school_address' => $request->school_address,
+            'email' => $request->email,
+            'mobile_number' =>  $request->mobile_number,
+            'yeargrad' => $request->yeargrad,
+         
+        ];
+  
+        User::create($credentials);
+   
         return redirect('enrollment/create')->with('success', 'You have successfully enrolled!');
+
+
+
 
 
     }
