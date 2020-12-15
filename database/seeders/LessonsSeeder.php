@@ -32,8 +32,8 @@ class LessonsSeeder extends Seeder
                 'description' => $faker->word,
                 'thumbnail' => 'nothumbnail.jpg',
                 'video_name' => 'novideo.mp4',
-                'user_id' => $userid->id,
-                'category_id' => $catid->id,
+                'user_id' => 1,
+                'category_id' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
                 
