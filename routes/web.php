@@ -94,7 +94,7 @@ Route::middleware(['auth','guest'])->group(function () {
 });
 
 Route::middleware(['auth','guest'])->group(function () {
-    Route::resource('/core/categories','App\Http\Controllers\Core\CategoryController');
+    Route::resource('/core/category','App\Http\Controllers\Core\CategoryController');
 });
 
 
