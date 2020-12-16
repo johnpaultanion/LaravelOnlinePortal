@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>iMOVE DEGITAL LEARNING</title>
+        <title>iMOVE DIGITAL LEARNING</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -46,42 +46,38 @@
                     </div>
                 </li> -->
                 <li class="nav-item enroll"><a class="nav-link js-scroll-trigger" href="/enrollment/create">Enroll Now!</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#program">Program</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#lecturers">Lecturers</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#program">Program</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                 
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary text-uppercase dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Accounts
-                    </button>
-                    <div class="dropdown-menu">
+               
                     
                             @if (Auth::user())
                                 @if (Auth::user()->role == 'teacher')
                                    
-                                        <a class="dropdown-item" href="/admin/dashboard">Dashboard</a>
+                                       
+                                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/admin/dashboard">Dashboard</a></li>
                                    
                                 @endif
 
                                
-                                    <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 
                             @else
                                
-                                    <a class="dropdown-item" href="/login">Login</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/register">Sign Up</a>
+                                    
+                                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Sign in</a></li>
+                                    
+                                   
                                 
                             @endif
 
                        
                        
 
-                    </div>
-                </div>
                     
 
 
@@ -544,7 +540,7 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright © iMOVE DEGITAL LEARNING  2020</div>
+                    <div class="col-lg-4 text-lg-left">Copyright © iMOVE DIGITAL LEARNING  2020</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
