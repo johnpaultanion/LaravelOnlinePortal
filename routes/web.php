@@ -18,13 +18,89 @@ use App\Http\Controllers\Site\IndexController;
 |
 */
 
-Route::get('/', [IndexController::class, 'index'])->name('site.index');
+Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('landingpage');
+
+Route::resource('enrollment','App\Http\Controllers\LandingpageController');
 
 Auth::routes();
 
+//admin lecturers
 Route::middleware(['auth','guest'])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 });
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::resource('/admin/lessons','App\Http\Controllers\Admin\LessonController');
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/lessons/create{category_id?}','App\Http\Controllers\Admin\LessonsController@create');
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/lessons/edit{category_id?}','App\Http\Controllers\Admin\LessonsController@edit');
+});
+
+///studentportal
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/site/studentportal','App\Http\Controllers\Site\IndexController@index');
+
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::post('search', ['as' => 'search', 'uses' => 'App\Http\Controllers\Site\IndexController@index']);
+});
+
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/site/{id?}','App\Http\Controllers\Site\IndexController@viewlecture');
+});
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/site/viewvideos/{video_id?}','App\Http\Controllers\Site\IndexController@viewvideos');
+});
+
+//admin section vids
+Route::middleware(['auth','guest'])->group(function () {
+    Route::resource('/admin/sectionvideo','App\Http\Controllers\Admin\SectionVideoController');
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/sectionvideo/createvids/{lesson_id?}','App\Http\Controllers\Admin\SectionVideoController@createvids');
+});
+
+
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/sectionvideo/createvids{section_id?}','App\Http\Controllers\Admin\SectionVideoController@create');
+});
+
+//admin sections
+Route::middleware(['auth','guest'])->group(function () {
+Route::resource('/admin/sections','App\Http\Controllers\Admin\SectionController');
+    });
+Route::middleware(['auth','guest'])->group(function () {
+Route::get('/admin/sections/create{lesson_id?}','App\Http\Controllers\Admin\SectionController@create');
+        });
+
+
+
+
+//core
+Route::middleware(['auth','guest'])->group(function () {
+    Route::get('/core/dashboard_core', [App\Http\Controllers\Core\DashboardController::class, 'index'])->name('core.dashboard');
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+    Route::resource('/core/lessons','App\Http\Controllers\Core\LessonController');
+});
+
+Route::middleware(['auth','guest'])->group(function () {
+    Route::resource('/core/categories','App\Http\Controllers\Core\CategoryController');
+});
+
+
+
+
+
 
 Route::get('login/facebook', [LoginController::class, 'redirectToProvider']);
 Route::get('login/facebook/callback', [LoginController::class, 'handleProviderCallback']);
