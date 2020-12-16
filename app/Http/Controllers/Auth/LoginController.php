@@ -144,10 +144,13 @@ class LoginController extends Controller
             return $response;
         }
 
-        $redirectTo = '/';
-
+        
         if(Auth::user()->role == 'teacher'){
             $redirectTo = '/admin/dashboard';
+        }else if(Auth::user()->role == 'core'){
+            $redirectTo = '/core/dashboard_core';
+        }else if(Auth::user()->role == 'student'){
+            $redirectTo = '/site/studentportal';
         }
 
         return $request->wantsJson()

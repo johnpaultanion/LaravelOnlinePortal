@@ -9,6 +9,8 @@
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           crossorigin="anonymous"/>
 
+    <link rel="stylesheet" href="/bower_components/bootstrap-horizon/bootstrap-horizon.css">
+
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     @yield('third_party_stylesheets')
@@ -21,20 +23,22 @@
     <div class="wrapper">
 
         @yield('navbar')
-    
+
         @yield('main-sidebar')
-    
+
         @yield('content')
-    
+
         @yield('main-content')
-    
+
         @yield('footer')
-    
+
     </div>
     <!-- ./wrapper -->
 </div>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+
+
 
 @yield('third_party_scripts')
 

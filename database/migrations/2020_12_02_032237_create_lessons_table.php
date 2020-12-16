@@ -16,10 +16,10 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->mediumText('description');
             $table->string('thumbnail');
-            $table->string('video_name');
             $table->string('user_id');
+            $table->string('category_id');
             $table->timestamps();
         });
     }
