@@ -31,33 +31,20 @@
         </div>
 
         <div class="card">
-         <div class="card-body ">
+        <div class="card-body ">
             {!! Form::open(['action' => 'App\Http\Controllers\Admin\SectionVideoController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-                
-            
-                  
-                   
-                    <div class="form-group">
-                        {{Form::label('lessonid', 'Lesson ID:')}}
-                       
-                     
-                        {{Form::text('lesson_id', $lesson->id, ['class' => 'form-control', 'placeholder' => 'Title' ,'readonly' => 'true'])}}
-                    
-                    </div>
-
                 <div class="form-group">
-                    
-                    
-
+                        {{Form::label('lessonid', 'Lesson ID:')}}
+                        {{Form::text('lesson_id', $lesson->id, ['class' => 'form-control', 'placeholder' => 'Title' ,'readonly' => 'true'])}}
+                </div>
+                <div class="form-group">
                        <div class="row">
                             <div class="col-md-8">
                             <label for="section-content">Select Section</label>
                                 <select name="section_id" class="form-control">
-                                
                                 @foreach($sections as $section)
                                     <option value="{{$section->id}}">{{$section->name}}</option>
                                 @endforeach
-
                                 </select>
                             </div>
                             <div class="col-md-4 pt-4">
@@ -72,16 +59,13 @@
                    <Label>Video File</Label>
                    <input type="file" class="form-control-file" name="video_name[]" multiple>
                    </div>
-
-                   
-
-
+                </div>
 
                {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
            {!! Form::close() !!}
-           </div>
+           
 
-                </div>
+        </div>
                 
 
                   

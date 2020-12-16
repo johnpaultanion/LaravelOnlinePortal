@@ -57,7 +57,7 @@ class LandingpageController extends Controller
   
         User::create($credentials);
    
-        return redirect('enrollment/create')->with('success', 'You have successfully enrolled!');
+        return redirect('enrollment/create')->with('success', 'you will be notified when we open our enrollment');
 
 
 
