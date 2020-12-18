@@ -13,54 +13,100 @@
     <div class="content-wrapper">
         <!-- Main content -->
         <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-8 offset-2 mt-3">
 
-        @include('inc.messages')
+                          <div class="card">
+                             <div class="card-body login-card-body">
+                              
 
-        <div class="card-header">
-        <h3 class="card-title">Edit a Lesson - {{$lesson->title}}</h3>
-        </div>
+                                    <p class="login-box-msg text-info"><b>Edit a Lesson - {{$lesson->title}}</b></p>
 
-        <div class="card">
-         <div class="card-body ">
+                                    @if(session()->has('success'))
+                                        <div class="alert alert-success">
+                                            <strong>Success!</strong> {{ session()->get('success') }}
+                                        </div>
+                                    @endif
 
-         {!! Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@update', $lesson->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-                <div class="form-group">
-                    {{Form::label('title', 'Title')}}
-                    {{Form::text('title', $lesson->title, ['class' => 'form-control', 'placeholder' => 'Title'])}}
+                                   
+
+                                            {!! Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@update', $lesson->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                                                
+                                                <div class="input-group mb-3">
+                                                    <p class="btn-block m-0">Title</p>
+                                                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $lesson->title }}" required autofocus placeholder="Enter title lesson here">
+                                                    <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        <span class="fas fa-user"></span>
+                                                    </div>
+                                                    </div>
+                                                    @error('title')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+
+
+                                                <div class="input-group mb-3">
+                                                    <p class="btn-block m-0">Description</p>
+                                                    <textarea  id="description" class="form-control @error('description') is-invalid @enderror" name="description" required autofocus placeholder="Enter description lesson here">  {{$lesson->description}}  </textarea>
+                                                    <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        <span class="fas fa-user"></span>
+                                                    </div>
+                                                    </div>
+                                                    @error('description')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+
+
+
+                                                <div class="form-group">
+                                                    {{Form::label('thumbnail', 'Thumbnail')}}<br>
+                                                    {{Form::file('thumbnail')}}
+                                                    <i>{{$lesson->thumbnail}}</i>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="category-content">Select a Category - <code>{{$lesson->category->name}}</code> </label>
+                                                    <select name="category_id" class="form-control">
+                                                    @foreach($categories as $category)
+                                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                                </div>
+
+                                                {{Form::hidden('_method','PUT')}}
+                                                {{Form::submit('Submit', ['class'=>'btn btn-info btn-block btn-sm my-4'])}}
+
+                                            {!! Form::close() !!}
+
+                                        
+                                      
+                             </div>
+                            </div>
+
+                     </div>
                 </div>
-                <div class="form-group">
-                    {{Form::label('description', 'Description')}}
-                    {{Form::textarea('description', $lesson->description, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
-                </div>
-                <div class="form-group">
-                    {{Form::label('thumbnail', 'Thumbnail')}}<br>
-                    {{Form::file('thumbnail')}}
-                    <i>{{$lesson->thumbnail}}</i>
-                </div>
-                <div class="form-group">
-                    <label for="category-content">Select a Category - <code>{{$lesson->category->name}}</code> </label>
-                    <select name="category_id" class="form-control">
-                    @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
-                    @endforeach
-                </select>
-                </div>
-
-                {{Form::hidden('_method','PUT')}}
-                {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-
-            {!! Form::close() !!}
-
-         
-        </div>
-        </div>
-                
+            </div>
 
         </section>
         <!-- /.content -->
 
         <div class="loading"></div>
     </div>
+
+
+
+
+
+
+
     <!-- /.content-wrapper -->
 @endsection
 

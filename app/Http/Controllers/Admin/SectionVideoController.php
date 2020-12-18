@@ -78,15 +78,19 @@ class SectionVideoController extends Controller
            foreach ($request->video_name as $file){
 
             if (false !== mb_strpos($file->getMimeType(), "video")) {
-                $filenamewext = $file->getClientOriginalName();
-                $filename = pathinfo($filenamewext, PATHINFO_FILENAME);
-                $extension = $file->getClientOriginalExtension();
+                //$filenamewext = $file->getClientOriginalName();
+                //$filename = pathinfo($filenamewext, PATHINFO_FILENAME);
+                //$extension = $file->getClientOriginalExtension();
 
-                $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
-                $path = $file->move(public_path('/filestorage/videofile'), $fileNameToStore);
+                //$fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
+
+                //$path = $file->move(public_path('/filestorage/videofile'), $fileNameToStore);
+                $path = $file->store('videos', 's3');
+
                 $save = new SectionVideo;
-                $save->video_name = $fileNameToStore;
+                $save->video_name = $path;
                 $save->title = "title";
+                $save->url = Storage::disk('s3')->url($path);
                 $save->section_id =  $request->input('section_id');
                 $save->lesson_id =  $request->input('lesson_id');
                 $save->save();

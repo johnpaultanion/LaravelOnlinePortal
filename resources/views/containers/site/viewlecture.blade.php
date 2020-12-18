@@ -15,62 +15,33 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-
-             
-                  
-                   
-
-                    <div class="col-md-12">
-                    
-                            <h3 class="text-center pb-2">Availble Videos</h3>
-                            <div class="container">
-                                    <div class="row">
-                                        
+                    <div class="col-12 ">
+                                <h3 class="login-box-msg text-info p-2"><b>Choose Available Videos</b></h3>
                              
+                                   
+                                       @forelse ($section_videos as $section_video)
                                                 
-                                                    <div class="viewlecture col-md-3 card lessoncard">
-                                                        
-                                                            
-                                                            
-                                                @forelse($section_videos as $section_video)
-                                                    
-                                                     <p>{{$section_video -> title}}</p>
-                                                     
-                                                     <p>{{$section_video -> video_name}}</p>
-                                                        
-                                                    
-                                                
-                                                @empty
-                                                <tr>No result found</tr>
-                                                @endforelse
-                                    
-
-
+                                               
+                                                <div class="card col-8 mt-4 mx-auto lessoncard viewlecture">
+                                                    <a href="/site/viewvideos/{{$section_video->id}}">
+                                                        <div class="card-body">
+                                                            <b>
+                                                            Video Title: {{$section_video->title}}
+                                                            </b>
+                                                            <p>
+                                                            Lesson Title: {{$section_video->lesson->title}}
+                                                            </p>
+                                                        </div>
+                                                    </a>
                                                 </div>
-
-                                    </div>
-                            </div>
-
-
-
-
-
-
-
+                                                
+                                            
+                                        @empty
+                                        <b class="text-center">No Available Videos in this lesson</b>
+                                        @endforelse
                     </div>
-
-
-                    
-
-
                 </div>
-            </div>
-
-            
-            
-            
-
-           
+            </div> 
         </section>
         <!-- /.content -->
 
