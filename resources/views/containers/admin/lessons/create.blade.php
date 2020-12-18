@@ -14,42 +14,84 @@
         <!-- Main content -->
         <section class="content">
 
-        @include('inc.messages')
+             <div class="container-fluid">
+                <div class="row">
+                    <div class="col-8 offset-2 mt-3">
+                        <div class="card">
+                            <div class="card-body login-card-body">
 
-        <div class="card-header">
-        <h3 class="card-title">Create A new lesson</h3>
-        </div>
+                                <p class="login-box-msg text-info"><b>Create a new lesson</b></p>
 
-        <div class="card">
-         <div class="card-body ">
-            {!! Form::open(['action' => 'App\Http\Controllers\Admin\LessonController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-                <div class="form-group">
-                    {{Form::label('title', 'Title')}}
-                    {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
-                </div>
-                <div class="form-group">
-                    {{Form::label('description', 'Description')}}
-                    {{Form::textarea('description', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
-                </div>
-                <div class="form-group">
-                    {{Form::label('thumbnail', 'Thumbnail')}}<br>
-                    {{Form::file('thumbnail')}}
-                </div>
+                                    @if(session()->has('success'))
+                                        <div class="alert alert-success">
+                                            <strong>Success!</strong> {{ session()->get('success') }}
+                                        </div>
+                                    @endif
 
-                <div class="form-group">
-                    <label for="category-content">Select a Category</label>
-                    <select name="category_id" class="form-control">
-                    @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
-                    @endforeach
-                </select>
+                                    {!! Form::open(['action' => 'App\Http\Controllers\Admin\LessonController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                                        
+                                        <div class="input-group mb-3">
+                                            <p class="btn-block m-0">Title</p>
+                                            <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" required autofocus placeholder="Enter title lesson here">
+                                            <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                            </div>
+                                            @error('title')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+
+
+
+                                        <div class="input-group mb-3">
+                                            <p class="btn-block m-0">Description</p>
+                                            <textarea  id="description" class="form-control @error('description') is-invalid @enderror" name="description" required autofocus placeholder="Enter description lesson here"></textarea>
+                                            <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                            </div>
+                                            @error('description')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+
+
+                                        <div class="input-group mb-3">
+                                            <p class="btn-block m-0">Thumbnail</p><br>
+                                            {{Form::file('thumbnail')}}
+
+                                            @error('thumbnail')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="category-content">Select a Category</label>
+                                            <select name="category_id" class="form-control">
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        </div>
+                                    
+                                        {{Form::submit('Submit', ['class'=>'btn btn-info btn-block btn-sm my-4'])}}
+                                    {!! Form::close() !!}
+                                   
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             
-                {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-            {!! Form::close() !!}
             </div>
-        </div>
-                
 
         </section>
         <!-- /.content -->

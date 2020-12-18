@@ -32,6 +32,7 @@
                                     <tr>
                                         <th width=50>No.</th>
                                         <th>Name</th>
+                                        <th>Description</th>
                                         <th width=160>Action</th>
                                     </tr>
                                 </thead>
@@ -40,6 +41,7 @@
                                     <tr>
                                         <th width=50>No.</th>
                                         <th>Name</th>
+                                        <th>Description</th>
                                         <th width=160>Action</th>
                                       </tr>
                                 </tfoot>
@@ -79,6 +81,15 @@
                                     <strong id="error-name"></strong>
                                 </span>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-4" >Description : </label>
+                                <input type="text" name="description" id="description" class="form-control" />
+                                <span class="invalid-feedback" role="alert">
+                                    <strong id="error-name"></strong>
+                                </span>
+                            </div>
+
+                          
                             <input type="hidden" name="action" id="action" value="Add" />
                             <input type="hidden" name="hidden_id" id="hidden_id" />
                         </div>
@@ -99,6 +110,7 @@
     </div>
 
 @endsection
+
 
 @section('script')
     <script>
@@ -122,6 +134,10 @@
                         name: 'name'
                     },
                     {
+                        data: 'description',
+                        name: 'description'
+                    },
+                    {
                         data: 'action',
                         name: 'action',
                         orderable: false
@@ -130,6 +146,7 @@
             });
 
             $('#create_record').click(function(){
+               
                 $('#myForm')[0].reset();
                 $('.form-control').removeClass('is-invalid')
                 $('.modal-title').text('Add News Record');
@@ -174,6 +191,7 @@
                             $('#table').DataTable().ajax.reload();
                         }
                         $('#form_result').html(html);
+                    
                     }
                 });
             });

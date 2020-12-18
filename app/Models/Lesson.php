@@ -13,7 +13,6 @@ class Lesson extends Model
         'title',
         'description',
         'thumbnail',
-        'video_name',
         'user_id'
     ];
 

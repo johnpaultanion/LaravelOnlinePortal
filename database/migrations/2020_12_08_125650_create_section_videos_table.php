@@ -16,6 +16,7 @@ class CreateSectionVideosTable extends Migration
         Schema::create('section_videos', function (Blueprint $table) {
             $table->id();
             $table->string('video_name');
+            $table->mediumText('url')->nullable();
             $table->string('title');
             $table->string('section_id');
             $table->string('lesson_id');

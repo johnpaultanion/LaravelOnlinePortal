@@ -29,7 +29,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/core/categories" class="nav-link">
+            <a href="/core/category" class="nav-link">
               <i class="nav-icon fas fa-book text-white"></i>
               <p>
                 Categories

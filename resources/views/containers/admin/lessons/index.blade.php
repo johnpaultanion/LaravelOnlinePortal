@@ -9,115 +9,109 @@
 @endsection
 
 @section('main-content')
-    <!-- Content Wrapper. Contains page content -->
-   
-    <div class="content-wrapper">
+
+<div class="content-wrapper">
         <!-- Main content -->
-        @include('inc.messages')
         <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                         @include('inc.messages')
 
-        <div class="card-header">
-        <h3 class="card-title">Lesson Table</h3>
-        
+                        <div class="card mt-4">
+                            <div class="card-header">
+                              <h3 class="card-title text-bold text-info">Lessons Records</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                              <table id="table1" class="table table-bordered table-hover">
+                                <thead class="bg-info">
+                                <tr>
+                                  <th>No.</th>
+                                  <th>Title</th>
+                                  <th>Description</th>
+                                  <th>Thumbnail</th>
+                                  <th>Category</th>
+                                  <th>Action</th>
+                                  
+                                  
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($lessons as $lesson)
+                                    <tr>
+                                        <td>{{$lesson->id}}</td>
+                                        <td>{{$lesson->title}}</td>
+                                        <td>{{$lesson->description}}</td>
+                                        <td>{{$lesson->thumbnail}}</td>
+                                        <td>{{$lesson->category_id}}</td>
+                                        
+                                        <td class="form-inline">
+                                         
+                                            {!!Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@destroy', $lesson->id], 'method' => 'POST'])!!}
+                                                {{Form::hidden('_method', 'DELETE')}}
 
-        <div class="card-tools">
-        
-        
+                                                <a class="btn btn-info btn-sm" href="/admin/lessons/{{$lesson->id}}/edit">Edit</a>
+                                                <a class="btn btn-primary btn-sm" href="/admin/sectionvideo/createvids/{{$lesson->id}}">Add a videos</a>
+                                                
 
-            <div class="input-group mt-0 input-group-sm" style="width: 550px; ">
-            
-            <a class="btn btn-primary "href="/admin/lessons/create" >
-            <i class="fas fa-plus-circle"></i> Create new Lesson
-            </a>
-   
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search by name, email">
+                                                <button type="button"class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#myModal{{$lesson->id}}">Delete</button>
+                                                
+                                                    <div class="modal" id="myModal{{$lesson->id}}">
+                                                        <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                    
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body text-center">
+                                                            Are you sure you want to delete this record?
+                                                            </div>
+                                                    
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-info btn-sm">Confirm</button>    
+                                                                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                    
+                                                        </div>
+                                                        </div>
+                                                    </div>
 
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                                </div>
-                               
+                                              
+
+                                
+                                            {!!Form::close()!!}
+
+                                            {{-- <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-info btn-sm mr-2">Edit</a>
+                                            {{-- <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-info btn-sm mr-2">Add a Video </a>
+                                            <button type="submit" class="btn btn-secondary btn-sm">Delete</button> --}}
+                                        </td>
+
+
+                                    </tr>
+                                @endforeach
+                                <tfoot class="bg-light">
+                                    <tr>
+                                      <th>No.</th>
+                                      <th>Title</th>
+                                      <th>Description</th>
+                                      <th>Thumbnail</th>
+                                      <th>Category</th>
+                                      <th>Action</th>
+                                    </tr>
+                                </tfoot>
+                              </table>
+                            </div>
+                            <!-- /.card-body -->
+                          </div>
+                    </div>
+                </div>
             </div>
-           
-        </div>
-    </div>
-
-    <div class="card">
-   
-    <!-- /.card-header -->
-    <div class="card-body table-responsive p-0">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>TITLE</th>
-                    <th>DESCRIPTION</th>
-                    <th>THUMBNAIL</th>
-                    <th>USER NAME</th>
-                    <th>CREATED AT</th>
-                    <th>ACTION</th>
-                   
-
-                </tr>
-            </thead>
-            <tbody>
-                
-                @forelse ($lessons as $lesson)
-                    <tr>
-                        <td>{{ $lesson->id }}</td>
-                        <td>{{ $lesson->title }}</td>
-                        <td>{{ $lesson->description }}</td>
-                        <td>{{ $lesson->thumbnail }}</td>
-                        <td>{{ $lesson->user->name }}</td>
-                        <td>{{ $lesson->created_at }}</td>
-
-                        <td>
-
-                        @if(Auth::user()->id == $lesson->user_id)
-
-                        <a href="/admin/sectionvideo/createvids/{{$lesson->id}}" class="btn btn-sm btn-warning"><i class="fas fa-plus-circle"> Add a Videos</i></a> 
-                        <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-pen-alt"> Edit</i></a> 
-                           
-                            {!!Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@destroy', $lesson->id], 'method' => 'POST'])!!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                               
-                                {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}                               
-                            {!!Form::close()!!}
-
-                         @endif
-
-                         <a href="/admin/lessons/{{$lesson->id}}" class="btn btn-sm btn-primary"><i class="fas fa-eye"> View</i></a>
-                        
-                        </td>
-       
-                        
-                    </tr>
-                  
-                @empty
-                    <tr>No Result Found</tr>
-                @endforelse
-              
-                  
-            </tbody>
-        </table>
-        
-       
-    </div>
-
-
-
- 
-
-
-    <!-- /.card-body -->
-  </div>
-
-                
-
         </section>
         <!-- /.content -->
 
-        <div class="loading"></div>
     </div>
-    <!-- /.content-wrapper -->
+  
 @endsection
+
+
 
