@@ -18,9 +18,13 @@ use App\Http\Controllers\Site\IndexController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('landingpage');
+Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('index');
+
 
 Route::resource('enrollment','App\Http\Controllers\LandingpageController');
+
+Route::resource('/contact','App\Http\Controllers\ContactUsController');
+
 
 Auth::routes();
 
@@ -28,7 +32,9 @@ Auth::routes();
 Route::middleware(['auth','guest'])->group(function () {
     Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
     //lesson
-    Route::resource('/admin/lessons', 'App\Http\Controllers\Admin\LessonController');
+    //Route::resource('/admin/lessons', 'App\Http\Controllers\Admin\LessonController');
+    Route::resource('/admin/lessons/lesson', 'App\Http\Controllers\Admin\LessonController');
+   
     //students
     Route::resource('/admin/students/student', 'App\Http\Controllers\Admin\StudentController');
     //inquired student

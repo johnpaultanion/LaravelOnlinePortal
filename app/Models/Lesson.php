@@ -13,7 +13,8 @@ class Lesson extends Model
         'title',
         'description',
         'thumbnail',
-        'user_id'
+        'user_id',
+        'category_id',
     ];
 
     public function user(){

@@ -18,8 +18,9 @@ class LandingpageController extends Controller
 {
     public function index(){
        
-        return view('landingpage');
+        return view('index');
     }
+    
 
     public function enrollment(){
        
