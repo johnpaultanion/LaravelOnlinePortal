@@ -18,7 +18,7 @@ class LandingpageController extends Controller
 {
     public function index(){
        
-        return view('index');
+       
     }
     
 
@@ -42,8 +42,9 @@ class LandingpageController extends Controller
             'school' => ['required'],
             'school_address' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'mobile_number' => ['required'],
+            'mobile_number' => ['required', 'size:11', 'unique:users'],
             'yeargrad' => ['required'],
+
         ]);
 
         $credentials = [

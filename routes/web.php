@@ -17,13 +17,14 @@ use App\Http\Controllers\Site\IndexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [App\Http\Controllers\LandingpageController::class, 'index'])->name('index');
-
-
+//landingpage
+Route::resource('/','App\Http\Controllers\GetnotifiedController');
+//enrollment
 Route::resource('enrollment','App\Http\Controllers\LandingpageController');
-
+//ContactUs
 Route::resource('/contact','App\Http\Controllers\ContactUsController');
+
+
 
 
 Auth::routes();

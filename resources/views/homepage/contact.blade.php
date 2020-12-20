@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +5,7 @@
     <link rel="preconnect" href="https://components.mywebsitebuilder.com/" crossorigin="">
     <link rel="preconnect" href="https://in-app.mywebsitebuilder.com/" crossorigin="">
     <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1,initial-scale=1,viewport-fit=cover">
-    <meta charset="utf-8"><title>ENROLLMENT - iMOVE DIGITAL LEARNING</title>
+    <meta charset="utf-8"><title>CONTACT - iMOVE DIGITAL LEARNING</title>
     <meta property="og:title" content="CONTACT - iMOVE DIGITAL LEARNING">
     <meta property="og:description" content=""><meta property="og:image" content="_DOMAIN_/s/cdn/v1.0/i/m?url=">
     <meta property="og:type" content="website"><meta property="og:image:height" content="630">
@@ -54,7 +53,18 @@
       </a>
   </div>
 </header>
-
+<div class="kv-ee-phone-button-container">
+  <a class="
+    kv-ee-button-lg kv-ee-phone-button kv-ee-button-callToAction undefined
+    kv-ee-button-dynamic-buttons kv-button-instant-edit
+    kv-ee-button-primary
+  " data-index="0" data-type="button" tabindex="0" data-href="/enrollment/create" href="/enrollment/create" target="_blank" data-property="global.callToAction" style="font-size: 100%">
+        
+        
+        <div style="font-size: 100%" class="kv-ee-button-has-title">ENROLL NOW&nbsp;<div data-editable="button" data-prop="global.callToAction.title" style="display:none;">
+        </div></div>
+      </a>
+</div>
 <nav>
   <a class="kv-menu">
     <i class="fa fa-bars"></i>
@@ -78,7 +88,18 @@
         <a id="custom-header-button-template" class="kv-ee-button-cart kv-ee-button-background kv-ee-button-primary"></a>
       </div>
     </li>
-   
+    <div class="kv-ee-phone-button-mobile">
+      <li><a class="
+    kv-ee-button-lg kv-ee-phone-button kv-ee-button-callToAction undefined
+    kv-ee-button-dynamic-buttons kv-button-instant-edit
+    kv-ee-button-primary
+  " data-index="0" data-type="button" tabindex="0" data-href="/enrollment/create" href="/enrollment/create" target="_blank" data-property="global.callToAction" style="font-size: 100%">
+        
+        
+        <div style="font-size: 100%" class="kv-ee-button-has-title">ENROLL NOW&nbsp;<div data-editable="button" data-prop="global.callToAction.title" style="display:none;">
+        </div></div>
+      </a></li>
+    </div>
   </ul>
 </nav>
 </div>
@@ -107,7 +128,7 @@
     <div class="kv-ee-row kv-notify-inview kv-ee-from-right">
       <div class="kv-ee-col-12 kv-ee-align-left">
         <div class="kv-ee-section-text kv-ee-text-content">
-          <h2 class="kv-ee-section-title kv-ee-section-title--md" data-type="text" tabindex="0">ENROLL NOW<span data-prop="title" class="ck-editable-element" data-editable="basic" style="display:none;"></span></h2>
+          <h2 class="kv-ee-section-title kv-ee-section-title--md" data-type="text" tabindex="0">CONTACT US<span data-prop="title" class="ck-editable-element" data-editable="basic" style="display:none;"></span></h2>
           
           
         </div>
@@ -115,81 +136,70 @@
     </div>
     <div class="kv-ee-row kv-notify-inview kv-ee-from-left">
       <div class="kv-ee-col-12">
-    
+        
+        
+      {!! Form::open(['action' => 'App\Http\Controllers\ContactUsController@store', 'method' => 'POST', 'id' => 'contact-form' , 'data-type' => 'contact', 'role' => 'form']) !!}
+              @if(session()->has('success'))
+                  <div class="alert alert-success">
+                      
+                      <strong>Message Sent!</strong> {{ session()->get('success') }}
+                  </div>
+              @endif
+           
+          <div class="kv-ee-hidden-form-data" data-sectionid="1608182487355"></div>
+                <div class="kv-ee-form-container ">
+                <div class="kv-ee-form-col">
 
-      <p class=" text-justify text-sm-left font-weight-normal text-secondary">Thank you for your interest in our program! Our review starts in February 22, 2022. Kindly fill out this form so we will inform you when we open our enrollment. </p>
+                <div class="kv-ee-form-group kv-ee-fieldFirstName-container ">
+                  <label>Full Name</label>
+                  <input id="name" type="text" class="kv-ee-form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus placeholder="">
+                     @error('name')
+                        <span class="invalid-feedback" role="alert">
+                        <strong class="text-warning">{{ $message }}</strong>
+                        </span>
+                    @enderror
 
+                </div>
+
+              <div class="kv-ee-form-group kv-ee-fieldEmail-container ">
+                <label>Your Email</label>
+                <input id="email" type="email" class="kv-ee-form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="">
+                @error('email')
+                  <span class="invalid-feedback" role="alert">
+                     <strong class="text-warning">{{ $message }}</strong>
+                  </span>
+                @enderror
                
-@if(session()->has('success'))
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Success!</strong> {{ session()->get('success') }}
-      </div>
-@endif
 
-        {!! Form::open(['action' => 'App\Http\Controllers\LandingpageController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-                    
-                    <div class="input-group mb-3">
-                            <p class="btn-block m-0">Name</p>
-                            <input id="name" type="text" class="kv-ee-form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus placeholder="Enter name here">
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong class="text-warning">{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
-                    <div class="input-group mb-3">
-                            <p class="btn-block m-0">School</p>
-                            <input id="school" type="text" class="kv-ee-form-control @error('school') is-invalid @enderror" name="school"  value="{{ old('school') }}" required autofocus placeholder="Enter your school here">
-                            @error('school')
-                                <span class="invalid-feedback" role="alert">
-                                   <strong class="text-warning">{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
-                    <div class="input-group mb-3">
-                            <p class="btn-block m-0">School Address</p>
-                            <input id="school_address" type="text" class="kv-ee-form-control @error('school_address') is-invalid @enderror" name="school_address" value="{{ old('school_address') }}" required autofocus placeholder="Enter your school address here"> 
-                            @error('school_address')
-                                <span class="invalid-feedback" role="alert">
-                                  <strong class="text-warning">{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
-                    <div class="input-group mb-3">
-                        <p class="btn-block m-0">Email Address</p>
-                        <input id="email" type="email" class="kv-ee-form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Ex.name@email.com">
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                 <strong class="text-warning">{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+              </div>
+            
+              <div class="kv-ee-form-group kv-ee-fieldPhone-container ">
+                <label>Your Phone</label>
+                <input id="mobile_number" type="number" class="kv-ee-form-control @error('mobile_number') is-invalid @enderror" name="mobile_number" value="{{ old('mobile_number') }}" required autofocus placeholder="">
+                 
+                  @error('mobile_number')
+                 
+                     <span class="invalid-feedback" role="alert">
+                        <strong class="text-warning">{{ $message }}</strong>
+                    </span>
+                 
+                  @enderror
 
-                    <div class="input-group mb-3">
-                        <p class="btn-block m-0">Mobile Number</p>
-                        <input id="mobile_number" type="number" class="kv-ee-form-control @error('mobile_number') is-invalid @enderror" name="mobile_number" value="{{ old('mobile_number') }}" required autofocus placeholder="Enter your mobile number here">
-                        @error('mobile_number')
+
+              </div>
+                  </div>
+                  <div class="kv-ee-form-col">
+                    <div class="kv-ee-fieldMessage-container">
+                      <label>Your Message</label>
+                      <textarea class="kv-ee-form-control @error('message') is-invalid @enderror" name="message" id="message" value="{{ old('message') }}" required autofocus placeholder=""></textarea>               
+                          @error('message') 
                             <span class="invalid-feedback" role="alert">
                                 <strong class="text-warning">{{ $message }}</strong>
                             </span>
-                        @enderror
+                          @enderror
                     </div>
-
-                    <div class="input-group mb-3">
-                        <p class="btn-block m-0">Year Graduated</p>
-                        <input id="yeargrad" type="date" class="kv-ee-form-control @error('yeargrad') is-invalid @enderror" name="yeargrad" value="{{ old('yeargrad') }}" required autofocus placeholder="Enter your year graduated here">
-                        @error('yeargrad')
-                            <span class="invalid-feedback" role="alert">
-                                  <strong class="text-warning">{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-
-
-
-
+                  </div>
+                </div>
                 <div class="kv-ee-fieldSubscribe-container">
             <label>
               <input type="checkbox" id="fieldSubscribe" value="false" style="" data-namelabel="By checking this box and submitting your information, you are granting us permission to email you. You may unsubscribe at any time." aria-label="By checking this box and submitting your information, you are granting us permission to email you. You may unsubscribe at any time.">
@@ -197,8 +207,6 @@
             </label>
           </div>
             <div class="kv-ee-captcha-field-wrapper"></div>
-
-
             <div class="kv-ee-submit kv-ee-align-left kv-ee-mt-3">
               <button class="
                   kv-ee-button kv-ee-submit-button kv-ee-button-md undefined
@@ -206,7 +214,7 @@
                   kv-ee-button-primary
                 " data-index="0" data-type="button" tabindex="0" data-property="formData.submitButton">
                   <i class="fa fa-paper-plane"> </i>
-                  <div style="">Submit<div data-editable="button" data-prop="formData.submitButton.title" style="display:none;"></div>
+                  <div style="">Send Message<div data-editable="button" data-prop="formData.submitButton.title" style="display:none;"></div>
                   </div>
               </button>
             </div>
@@ -505,27 +513,3 @@
 
 </body>
 </html>
-
-
-
-@section('main-content')
-    <div class="bg-light" style="height: 100%">
-        <div class="row">
-            <div class="col-md-6  mx-auto">
-            
-                <div class="card p-3 mt-4 m-2">
-
-
-                    <a class="mx-auto" href="/">
-                    <img  src="/img/logo-top.jpg" style="width: 17rem;" alt="">
-                    </a>
-
-              
- 
-
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
-
