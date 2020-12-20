@@ -104,9 +104,9 @@
 <script src="{{ asset('dist/js/pages/dashboard3.js') }}"></script>
 
 <!-- MultiStepsForm SCRIPTS -->
-<script src="{{ asset('js/formmultisteps.js') }}"></script>
+<!-- <script src="{{ asset('js/formmultisteps.js') }}"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-
+ -->
 @yield('script')
 
 
