@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lesson;
 use App\Models\Category;
+use App\Models\User;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -20,31 +21,36 @@ use Yajra\DataTables\Facades\DataTables;
 
 class LessonController extends Controller
 {
-    public function index(){
+    public function index(request $request){
 
-        $lessons = Lesson::all();
-        return view('containers.admin.lessons.index')->with(compact(['lessons']));
-
-    
-        // if ($request->ajax()) {
-        //     $data = Lesson::all();
-
-        //     return DataTables::of($data)
-        //         ->addColumn('action', function ($data) {
-        //             $button = '<button type="button" name="edit" edit="' . $data->id . '" class="edit btn btn-info btn-sm">Edit</button>';
-        //             $button .= '<button type="button" name="delete" delete="' . $data->id . '" id="' . $data->id . '" class="delete btn btn-danger btn-sm ml-2">Delete</button>';
-        //             return $button;
-        //         })
-        //         ->rawColumns(['action'])
-        //         ->make(true);
-        // }
+        //$lessons = Lesson::all();
+        //return view('containers.admin.lessons.index')->with(compact(['lessons']));
 
     
-        // return view('containers.admin.lessons.index');
+        if ($request->ajax()) {
+            $data = Lesson::all();
 
+            return DataTables::of($data)
+                ->addColumn('user_id', function ($data) {
+                    return $data->user ? $data->user['name'] : 'Deleted';
+                })
+                ->addColumn('category', function ($data) {
+                    return $data->category ? $data->category['name'] : 'Deleted';
+                })
+                ->addColumn('action', function ($data) {
+                    $button = '<button type="button" name="edit" edit="' . $data->id . '" class="edit btn btn-info btn-sm">Edit</button>';
+                    $button .= '<button type="button" name="delete" delete="' . $data->id . '" id="' . $data->id . '" class="delete btn btn-danger btn-sm ml-2">Delete</button>';
+                    return $button;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+
+        $users = User::all();
+        $categories = Category::all();
         
-        // $lessons = Lesson::orderBy('created_at','desc')->paginate(10);
-        // return view('containers.admin.lessons.index')->with('lessons', $lessons);
+        return view('containers.admin.lessons.lesson')->with(compact(['categories', 'users']));
+
 
     }
 
@@ -81,18 +87,17 @@ class LessonController extends Controller
 
            
         
-            $filenameWithExt = $request->file('thumbnail')->getClientOriginalName();
+            //$filenameWithExt = $request->file('thumbnail')->getClientOriginalName();
             // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //$filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             // Get just ext
-            $extension = $request->file('thumbnail')->getClientOriginalExtension();
+            //$extension = $request->file('thumbnail')->getClientOriginalExtension();
             // Filename to store
-            $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
+            //$fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
             // Upload Image
             //$path = $request->file('thumbnail')->move(public_path('thumbnail'), $fileNameToStore);
-            $path = $request->file('thumbnail')->store('thumbnail', 's3');
 
-           
+            $path = $request->file('thumbnail')->store('thumbnail', 's3');
             //Storage::disk('s3')->setVisibility($path, 'public');
             
             // Create lesson
@@ -100,6 +105,7 @@ class LessonController extends Controller
             $lesson->title = $request->input('title');
             $lesson->description = $request->input('description');
             $lesson->thumbnail = $path;
+            $lesson->url = Storage::disk('s3')->url($path);
             $lesson->user_id = auth()->user()->id;
             $lesson->category_id = $request->input('category_id');
             $lesson->save();
@@ -149,24 +155,28 @@ class LessonController extends Controller
         
         if($request->hasFile('thumbnail')){
             // Get filename with the extension
-            $filenameWithExt = $request->file('thumbnail')->getClientOriginalName();
+            //$filenameWithExt = $request->file('thumbnail')->getClientOriginalName();
             // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //$filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             // Get just ext
-            $extension = $request->file('thumbnail')->getClientOriginalExtension();
+            //$extension = $request->file('thumbnail')->getClientOriginalExtension();
             // Filename to store
-            $fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
+            //$fileNameToStore= $filename.'_'.time().'_'.$userid.'.'.$extension;
             // Upload Image
-            $path = $request->file('thumbnail')->move(public_path('/filestorage/thumbnail'), $fileNameToStore);
+            Storage::disk('s3')->delete($lesson->thumbnail);
+            $path = $request->file('thumbnail')->store('thumbnail', 's3');
+            
             // Delete file if exists
-            File::delete(public_path('/filestorage/thumbnail/'.$lesson->thumbnail));
+            //File::delete(public_path('/filestorage/thumbnail/'.$lesson->thumbnail));
+           
         }
 
         // Update Post
         $lesson->title = $request->input('title');
         $lesson->description = $request->input('description');
         if($request->hasFile('thumbnail')){
-            $lesson->thumbnail = $fileNameToStore;
+            $lesson->thumbnail = $path;
+            $lesson->url = Storage::disk('s3')->url($path);
         }
         $lesson->category_id = $request->input('category_id');
         $lesson->save();

@@ -10,138 +10,7 @@
 
 @section('main-content')
     <!-- Content Wrapper. Contains page content -->
-   
     <div class="content-wrapper">
-        <!-- Main content -->
-        @include('inc.messages')
-        <section class="content">
-
-        <div class="card-header">
-        <h3 class="card-title">Lesson Table</h3>
-        
-
-        <div class="card-tools">
-        
-        
-
-            <div class="input-group mt-0 input-group-sm" style="width: 550px; ">
-            
-            <a class="btn btn-primary "href="/admin/lessons/create" >
-            <i class="fas fa-plus-circle"></i> Create new Lesson
-            </a>
-   
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search by name, email">
-
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                                </div>
-                               
-            </div>
-           
-        </div>
-    </div>
-
-    <div class="card">
-   
-    <!-- /.card-header -->
-    <div class="card-body table-responsive p-0">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>TITLE</th>
-                    <th>DESCRIPTION</th>
-                    <th>THUMBNAIL</th>
-                    <th>USER NAME</th>
-                    <th>CREATED AT</th>
-                    <th>ACTION</th>
-                   
-
-                </tr>
-            </thead>
-            <tbody>
-                
-                @forelse ($lessons as $lesson)
-                    <tr>
-                        <td>{{ $lesson->id }}</td>
-                        <td>{{ $lesson->title }}</td>
-                        <td>{{ $lesson->description }}</td>
-                        <td>{{ $lesson->thumbnail }}</td>
-                        <td>{{ $lesson->user->name }}</td>
-                        <td>{{ $lesson->created_at }}</td>
-
-                        <td>
-
-                        @if(Auth::user()->id == $lesson->user_id)
-
-                        <a href="/admin/sectionvideo/createvids/{{$lesson->id}}" class="btn btn-sm btn-warning"><i class="fas fa-plus-circle"> Add a Videos</i></a> 
-                        <a href="/admin/lessons/{{$lesson->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-pen-alt"> Edit</i></a> 
-                           
-                            {!!Form::open(['action' => ['App\Http\Controllers\Admin\LessonController@destroy', $lesson->id], 'method' => 'POST'])!!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                               
-                                {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}                               
-                            {!!Form::close()!!}
-
-                         @endif
-
-                         <a href="/admin/lessons/{{$lesson->id}}" class="btn btn-sm btn-primary"><i class="fas fa-eye"> View</i></a>
-                        
-                        </td>
-       
-                        
-                    </tr>
-                  
-                @empty
-                    <tr>No Result Found</tr>
-                @endforelse
-              
-                  
-            </tbody>
-        </table>
-        
-       
-    </div>
-
-
-
- 
-
-
-    <!-- /.card-body -->
-  </div>
-
-                
-
-        </section>
-        <!-- /.content -->
-
-        <div class="loading"></div>
-    </div>
-    <!-- /.content-wrapper -->
-@endsection
-
-
-
-
-
-
-
-
-
-@extends('layouts.app')
-
-@section('navbar')
-    @include('../components.admin.navbar')
-@endsection
-
-@section('main-sidebar')
-    @include('../components.admin.main-sidebar')
-@endsection
-
-@section('main-content')
-  
-<div class="content-wrapper">
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -151,7 +20,7 @@
                             <div class="card-header">
                               <h3 class="card-title text-bold text-info">Lessons Records</h3>
                                 <div align="right">
-                                    <button type="button" name="create_record" id="create_record" class="btn btn-info">Create Lesson</button>
+                                    <button type="button" name="create_record" id="create_record" class="btn btn-info">Create Record</button>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -159,23 +28,23 @@
                               <table id="table" class="table table-bordered table-hover">
                                 <thead class="bg-light">
                                     <tr>
+                                      
+                                        <th>Category</th>
                                         <th>Title</th>
                                         <th>Description</th>
-                                        <th>Thumbnail</th>
-                                        <th>Category</th>
+                                        <th>Created By</th>
                                         
-                                       
                                         <th width=160>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <tfoot class="bg-light">
                                     <tr>
+                                        <th>Category</th>
                                         <th>Title</th>
                                         <th>Description</th>
-                                        <th>Thumbnail</th>
-                                        <th>Category</th>
-                                        
+                                        <th>Created By</th>
+
                                         <th width=160>Action</th>
                                       </tr>
                                 </tfoot>
@@ -192,7 +61,7 @@
         <div class="loading"></div>
 
         <!-- The Modal -->
-        <form method="post" id="myForm" class="form-horizontal"  enctype="multipart/form-data">
+        <form method="post" id="myForm" class="form-horizontal ">
             @csrf
             <div class="modal" id="formModal">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -209,6 +78,7 @@
                             <span id="form_result"></span>
                             
                             <div class="row">
+                              
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label col-md-4" >Category : </label>
@@ -228,13 +98,11 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-4" >Thumbnail : </label>
                                         <input type="file" name="thumbnail" id="thumbnail" class="form-control" />
-                                     
-                                     
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong id="error-thumbnail"></strong>
+                                        </span>
                                     </div>
                                 </div>
-
-
-
                             </div>
 
                             <div class="row">
@@ -257,11 +125,79 @@
                                         </span>
                                     </div>
                                 </div>
-                             
+                               
                             </div>
 
+                            <div class="row">
+                             
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <h3 class="card-title text-bold text-info">Create a Section :</h3><br>
+                                        <label class="control-label col-md-4" >Section Name : </label>
+                                        <input type="text" name="sectionname" id="sectionname" class="form-control" />
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong id="error-sectionname"></strong>
+                                        </span>
+                                    </div>
+                                </div>
+
                             
+                               
+                            </div>
+
                          
+                            
+                          
+
+                            <input type="hidden" name="action" id="action" value="Add" />
+                            <input type="hidden" name="hidden_id" id="hidden_id" />
+                        </div>
+                
+                        <!-- Modal footer -->
+                        <div class="modal-footer bg-light">
+                            <input type="submit" name="action_button" id="action_button" class="btn btn-info" value="Save" />
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <form method="post" id="myForm" class="form-horizontal ">
+            @csrf
+            <div class="modal" id="formModalSection">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                
+                        <!-- Modal Header -->
+                        <div class="modal-header bg-light">
+                            <p class="modal-title text-info font-weight-bold">Modal Heading</p>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <span id="form_result"></span>
+                            
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4" >Name : </label>
+                                        <input type="text" name="name" id="name" class="form-control" />
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong id="error-name"></strong>
+                                        </span>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                         
+                            
+                          
 
                             <input type="hidden" name="action" id="action" value="Add" />
                             <input type="hidden" name="hidden_id" id="hidden_id" />
@@ -281,9 +217,12 @@
   
 
     </div>
-      
+    <!-- /.content-wrapper -->
 @endsection
 
+@section('footer')
+    @include('./components.admin.footer')
+@endsection
 
 
 @section('script')
@@ -295,11 +234,16 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "{{ route('lessons.index') }}",
+                    url: "{{ route('lesson.index') }}",
                     beforeSend: function() { $('.loading').show() },
                     complete: function() { $('.loading').hide() },
                 },
                 columns: [
+                    
+                    {
+                        data: 'category',
+                        name: 'category'
+                    },
                     {
                         data: 'title',
                         name: 'title'
@@ -309,12 +253,8 @@
                         name: 'description'
                     },
                     {
-                        data: 'thumbnail',
-                        name: 'thumbnail'
-                    },
-                    {
-                        data: 'category',
-                        name: 'category'
+                        data: 'user_id',
+                        name: 'user_id'
                     },
                     
                     {
@@ -325,18 +265,15 @@
                 ]
             });
 
-            ///create lessons
-
             $('#create_record').click(function(){
                 $('#myForm')[0].reset();
-                
+               
                 $('#category_id').select2({
                     theme:'bootstrap4',
                     placeholder: 'Select category'
                 })
-
                 $('.form-control').removeClass('is-invalid')
-                $('.modal-title').text('Add New Lesson');
+                $('.modal-title').text('Add New Record');
                 $('#action_button').val('Save');
                 $('#action').val('Add');
                 $('#form_result').html('');
@@ -361,7 +298,6 @@
                     method:type,
                     data:$(this).serialize(),
                     dataType:"json",
-                    
                     success:function(data){
                         var html = '';
                         if(data.errors){
@@ -376,12 +312,18 @@
                             html = '<div class="alert alert-success">' + data.success + '</div>';
                             $('.form-control').removeClass('is-invalid')
                             $('#myForm')[0].reset();
-                           
                             $('#category_id').select2({
                                 theme:'bootstrap4',
                                 placeholder: 'Select category'
                             })
                             $('#table').DataTable().ajax.reload();
+                            $('#formModalSection').modal('show');
+                            $('#formModal').modal('hide');
+                            $('.form-control').removeClass('is-invalid')
+                            $('.modal-title').text('Add New Section');
+                            $('#action_button').val('Save');
+                            $('#action').val('Add');
+                            $('#form_result').html('');
                         }
                         $('#form_result').html(html);
                     }
@@ -389,11 +331,6 @@
             });
 
 
-
-           
-
         })
     </script>
 @endsection
-
-

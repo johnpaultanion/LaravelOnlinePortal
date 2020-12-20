@@ -22,6 +22,7 @@
                             <div class="card-header">
                               <h3 class="card-title text-bold text-info">Categories Records</h3>
                                 <div align="right">
+                                
                                     <button type="button" name="create_record" id="create_record" class="btn btn-info">Create Record</button>
                                 </div>
                             </div>

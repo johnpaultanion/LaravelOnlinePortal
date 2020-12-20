@@ -21,6 +21,9 @@
                         <div class="card mt-4">
                             <div class="card-header">
                               <h3 class="card-title text-bold text-info">Lessons Records</h3>
+                                  <div align="right">
+                                    <button type="button" name="create_record" id="create_record" class="btn btn-info">Create Lesson</button>
+                                </div>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -107,11 +110,122 @@
                 </div>
             </div>
         </section>
+
+
+        
+                       
+                       
+                        <form method="post" name="myForm" id="msform" class="modal-content form-horizontal ">
+                            @csrf
+                            <div class="modal" id="formModal">
+                                <div class="modal-dialog modal-dialog-centered ">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-light">
+                                        <p class="modal-title text-info font-weight-bold">Modal Heading</p>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                        
+                                      
+                                                <!-- fieldsets -->
+                                                <fieldset>
+                                                    <h2 class="fs-title">Create a Lesson</h2>
+                                                
+                                                    <div class="input-group mb-3">
+                                                        <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" required autofocus placeholder="Enter title lesson here">
+                                                    
+                                                        @error('title')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="input-group mb-3">
+                                                        <textarea  id="description" class="form-control @error('description') is-invalid @enderror" name="description" required autofocus placeholder="Enter description lesson here"></textarea>
+                                                        
+                                                        @error('description')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
+                                                </div>
+
+                                                <div class="input-group mb-3">
+                                                <small>Thumbnail</small>
+                                                        {{Form::file('thumbnail')}}
+
+                                                        @error('thumbnail')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
+
+                                                    </div>
+                                                    <small class="input-group">Select a Category</small>
+                                                    <div class="input-group mb-3">
+                                                        
+                                                        <select name="category_id" class="form-control">
+                                                    
+                                                            <option value="1">test</option>
+                                                    
+                                                        </select>
+                                                    </div>
+                                                
+                                                
+                                                    <input type="button" name="next" class="next action-button" value="Next" />
+                                                    <input type="submit" name="action_button" id="action_button" class="action-button" value="Next" />
+                                                </fieldset>
+
+                                                <fieldset>
+                                                    <h2 class="fs-title">Create a Section</h2>
+                                                    
+                                                    <div class="input-group mb-3">
+                                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" required autofocus placeholder="Name of section">
+                                                    
+                                                        @error('name')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
+                                                    </div>
+
+                                                    <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                                    <input type="submit" name="action_button" id="action_button" class="action-button" value="Submit" />
+                                                </fieldset>
+                                    </div>
+                               </div>
+                            </div>
+                        
+                        </form>
+                       
+            
         <!-- /.content -->
 
-    </div>
+</div>
   
 @endsection
+
+
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $('.loading').hide()
+            $('#create_record').click(function(){
+               
+                $('#msform')[0].reset();
+                $('.form-control').removeClass('is-invalid')
+                $('.modal-title').text('Add New Record');
+                $('#action_button').val('Save');
+                $('#action').val('Add');
+                $('#form_result').html('');
+                $('#formModal').modal('show');
+            });
+
+        })
+    </script>
+
+@endsection
+
 
 
 

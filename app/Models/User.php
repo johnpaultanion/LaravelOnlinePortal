@@ -28,7 +28,8 @@ class User extends Authenticatable
         'provider_id',
         'role',
         'device_uuid',
-        'is_paid'
+        'is_paid',
+        
     ];
 
     /**
