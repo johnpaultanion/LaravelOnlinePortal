@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+
   {{-- Material Design --}}
   {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"> --}}
   <style>
@@ -91,6 +92,7 @@
 <!-- DataTables -->
 <script src="{{ asset('plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+
 <!-- overlayScrollbars -->
 
 <!-- AdminLTE App -->
@@ -101,6 +103,10 @@
 <script src="{{ asset('dist/js/demo.js') }}"></script>
 <script src="{{ asset('dist/js/pages/dashboard3.js') }}"></script>
 
+<!-- MultiStepsForm SCRIPTS -->
+<!-- <script src="{{ asset('js/formmultisteps.js') }}"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+ -->
 @yield('script')
 
 

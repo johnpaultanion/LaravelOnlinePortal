@@ -21,6 +21,7 @@ class CreateLessonsTable extends Migration
             $table->mediumText('url')->nullable();
             $table->string('user_id')->nullable();
             $table->string('category_id')->nullable();
+            $table->string('section_id')->nullable();
             $table->timestamps();
         });
     }

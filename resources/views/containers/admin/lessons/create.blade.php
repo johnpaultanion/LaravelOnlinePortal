@@ -44,9 +44,6 @@
                                                 </span>
                                             @enderror
                                         </div>
-
-
-
                                         <div class="input-group mb-3">
                                             <p class="btn-block m-0">Description</p>
                                             <textarea  id="description" class="form-control @error('description') is-invalid @enderror" name="description" required autofocus placeholder="Enter description lesson here"></textarea>
@@ -61,8 +58,6 @@
                                                 </span>
                                             @enderror
                                         </div>
-
-
                                         <div class="input-group mb-3">
                                             <p class="btn-block m-0">Thumbnail</p><br>
                                             {{Form::file('thumbnail')}}
@@ -74,7 +69,6 @@
                                             @enderror
 
                                         </div>
-
                                         <div class="form-group">
                                             <label for="category-content">Select a Category</label>
                                             <select name="category_id" class="form-control">
